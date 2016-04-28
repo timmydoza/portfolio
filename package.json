@@ -9,6 +9,10 @@
   "author": "Tim Mendoza",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "normalize.css": "^4.1.1"
+  },
+  "devDependencies": {
+    "gulp-sass": "^2.3.1"
   }
 }
