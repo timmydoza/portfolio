@@ -1,0 +1,24 @@
+$top-offset: 100px;
+
+header {
+  width: 100%;
+  position: fixed;
+  h1 {
+    margin: 0;
+  }
+}
+
+.underlay {
+  height: $top-offset;
+  background: #555;
+  opacity: 0;
+}
+
+.overlay {
+  top: $top-offset / 3;
+}
+
+.content-wrapper {
+  padding-top: $top-offset;
+  height: 1000px;
+}
