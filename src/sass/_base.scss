@@ -3,14 +3,15 @@ $top-offset: 100px;
 header {
   width: 100%;
   position: fixed;
+  color: #eee;
   h1 {
-    margin: 0;
+    margin: 0 0 0 50px;
   }
 }
 
 .underlay {
   height: $top-offset;
-  background: #555;
+  background: #000;
   opacity: 0;
 }
 
@@ -21,4 +22,11 @@ header {
 .content-wrapper {
   padding-top: $top-offset;
   height: 1000px;
+}
+
+.image-wrapper {
+  background-size: 100%;
+  // padding-top: $top-offset;
+  background-image: url(img/background.jpg);
+  height: 500px;
 }
