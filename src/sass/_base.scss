@@ -1,12 +1,25 @@
 $top-offset: 100px;
 
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  margin: 0;
+}
+
 header {
   width: 100%;
   position: fixed;
-  color: #eee;
-  h1 {
-    margin: 0 0 0 50px;
-  }
+  color: #fff;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s cubic-bezier(0.25, 0.8, 0.50, 0.95);
+}
+
+a:hover {
+  color: #888;
 }
 
 .underlay {
@@ -16,7 +29,24 @@ header {
 }
 
 .overlay {
-  top: $top-offset / 3;
+  height: $top-offset;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .name {
+    font-size: 3em;
+    margin: 0 0 0 10%;
+  }
+}
+
+.nav {
+  width: 40%;
+  li {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    display: inline;
+    margin: 0 7%;
+  }
 }
 
 .content-wrapper {
@@ -26,7 +56,13 @@ header {
 
 .image-wrapper {
   background-size: 100%;
-  // padding-top: $top-offset;
   background-image: url(img/background.jpg);
   height: 500px;
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  h1 {
+    padding-top: 150px;
+    font-size: 4em;
+  }
 }
