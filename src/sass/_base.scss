@@ -12,40 +12,42 @@ header {
   color: #fff;
 }
 
-a, a:visited {
-  text-decoration: none;
-  color: #fff;
-  transition: color 0.3s cubic-bezier(0.25, 0.8, 0.50, 0.95);
-}
-
-a:hover {
-  color: #888;
-}
-
-.underlay {
-  height: $top-offset;
-  background: #000;
-  opacity: 0;
-}
-
-.overlay {
-  height: $top-offset;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  .name {
-    font-size: 3em;
-    margin: 0 0 0 10%;
+#menu {
+  a, a:visited {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s cubic-bezier(0.25, 0.8, 0.50, 0.95);
   }
-}
 
-.nav {
-  width: 40%;
-  li {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    display: inline;
-    margin: 0 7%;
+  a:hover {
+    color: #888;
+  }
+
+  .underlay {
+    height: $top-offset;
+    background: #000;
+    opacity: 0;
+  }
+
+  .overlay {
+    height: $top-offset;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .name {
+      font-size: 3em;
+      margin: 0 0 0 10%;
+    }
+  }
+
+  .nav {
+    width: 40%;
+    li {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      display: inline;
+      margin: 0 7%;
+    }
   }
 }
 

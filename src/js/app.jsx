@@ -8,6 +8,9 @@ var App = React.createClass({
     return (
       <div>
         <Menu />
+        <div className="content-wrapper">
+          This is some content...
+        </div>
       </div>
     )
   }
