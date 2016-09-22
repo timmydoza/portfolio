@@ -9,6 +9,7 @@
   "author": "Tim Mendoza",
   "license": "MIT",
   "dependencies": {
+    "compression": "^1.6.2",
     "express": "^4.13.4",
     "normalize.css": "^4.1.1"
   },
