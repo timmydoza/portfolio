@@ -6,13 +6,6 @@ h1 {
   margin: 0;
 }
 
-header {
-  backface-visibility: hidden;
-  width: 100%;
-  position: fixed;
-  color: #fff;
-}
-
 a, a:visited {
   text-decoration: none;
   color: #fff;
@@ -23,57 +16,73 @@ a:hover {
   color: #888;
 }
 
-#menu {
-  display: flex;
-  justify-content: center;
+header, .name, .nav, .nav a, .underlay, .minimize {
+  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.50, 0.95);
 }
 
-.underlay, .overlay, .nav, .name, .underlay.minimize, .overlay.minimize, .nav.minimize, .name.minimize {
-  transition: all 0.8s cubic-bezier(0.25, 0.8, 0.50, 0.95);
-}
+header {
+  width: 100%;
+  height: 150px;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0);
 
-.underlay {
-  height: $top-offset;
-  background: #000;
-  opacity: 0;
-}
-
-.overlay {
-  max-width: 1200px;
-  height: $top-offset;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   .name {
-    font-size: 3.5em;
-    margin: 0 0 0 10%;
+    display: inline-block;
+    height: 150px;
+    line-height: 150px;
+    float: left;
+    font-size: 3em;
+    color: #fff;
+  }
+
+  .nav {
+    display: inline-block;
+    float: right;
+
+    a {
+      line-height: 150px;
+      padding: 0 40px;
+    }
+  }
+
+  .underlay {
+    background: #000;
+    height: 150px;
+    opacity: 0;
+    width: 100%;
+
+    z-index: -1;
   }
 }
 
-.nav {
-  width: 40%;
-  li {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    display: inline;
-    margin: 0 7%;
-    font-size: 1.2em;
+header.minimize {
+  height: 75px;
+  background-color: rgba(0, 0, 0, 255);
+
+
+  .name {
+    height: 75px;
+    line-height: 75px;
+    transform: scale(0.7);
+  }
+
+  a {
+    line-height: 75px;
+  }
+
+  .underlay {
+    opacity: 0.8;
   }
 }
 
-.overlay.minimize, .underlay.minimize {
-  height: 50px;
-}
-
-.underlay.minimize {
-  opacity: 0.8;
-}
-
-.name.minimize {
-  transform: scale(0.7);
+.container {
+  padding: 0 10%;
+  // max-width: 1400px;
 }
 
 .content-wrapper {
+  margin: 0 20%;
+  max-width: 1400px;
   padding-top: $top-offset;
   height: 1000px;
 }
@@ -81,7 +90,7 @@ a:hover {
 .image-wrapper {
   background-size: 100%;
   background-image: url(img/background.jpg);
-  height: 550px;
+  height: 500px;
   display: flex;
   color: #fff;
   flex-direction: column;
@@ -99,4 +108,16 @@ a:hover {
   height: 2px;
   width: 5%;
   background: #fff;
+}
+
+.project {
+  width: 400px;
+
+  img {
+    height: 300px;
+    width: 300px;
+  }
+  .description {
+    background-color: salmon;
+  }
 }

@@ -15,18 +15,16 @@ module.exports = React.createClass({
     var minimize = this.state.minimize ? ' minimize' : '';
 
     return (
-      <div id="menu">
-        <header className={"underlay" + minimize}></header>
-        <header className={"overlay" + minimize}>
+      <header className={minimize}>
+        <div className="container">
           <h1 className={"name" + minimize}>Tim Mendoza</h1>
-          <ul className="nav">
-            <li><a href="#">Bio</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </header>
-      </div>
+          <nav className="nav">
+            <a href="#">Projects</a>
+            <a href="#">Resume</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+      </header>
     )
   },
 
