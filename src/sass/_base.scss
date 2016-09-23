@@ -7,48 +7,69 @@ h1 {
 }
 
 header {
+  backface-visibility: hidden;
   width: 100%;
   position: fixed;
   color: #fff;
 }
 
+a, a:visited {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s cubic-bezier(0.25, 0.8, 0.50, 0.95);
+}
+
+a:hover {
+  color: #888;
+}
+
 #menu {
-  a, a:visited {
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s cubic-bezier(0.25, 0.8, 0.50, 0.95);
-  }
+  display: flex;
+  justify-content: center;
+}
 
-  a:hover {
-    color: #888;
-  }
+.underlay, .overlay, .nav, .name, .underlay.minimize, .overlay.minimize, .nav.minimize, .name.minimize {
+  transition: all 0.8s cubic-bezier(0.25, 0.8, 0.50, 0.95);
+}
 
-  .underlay {
-    height: $top-offset;
-    background: #000;
-    opacity: 0;
-  }
+.underlay {
+  height: $top-offset;
+  background: #000;
+  opacity: 0;
+}
 
-  .overlay {
-    height: $top-offset;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    .name {
-      font-size: 3em;
-      margin: 0 0 0 10%;
-    }
+.overlay {
+  max-width: 1200px;
+  height: $top-offset;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .name {
+    font-size: 3em;
+    margin: 0 0 0 10%;
   }
+}
 
-  .nav {
-    width: 40%;
-    li {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 300;
-      display: inline;
-      margin: 0 7%;
-    }
+.nav {
+  width: 40%;
+  li {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    display: inline;
+    margin: 0 7%;
   }
+}
+
+.overlay.minimize, .underlay.minimize {
+  height: 50px;
+}
+
+.underlay.minimize {
+  opacity: 0.8;
+}
+
+.name.minimize {
+  font-size: 2em;
 }
 
 .content-wrapper {

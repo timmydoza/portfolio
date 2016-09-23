@@ -8,6 +8,11 @@ var App = React.createClass({
     return (
       <div>
         <Menu />
+        <div className="image-wrapper">
+          <h1>Software Developer</h1>
+          <div className="line"></div>
+          <h1>Seattle, WA</h1>
+        </div>
         <div className="content-wrapper">
           This is some content...
         </div>

@@ -26,11 +26,6 @@ module.exports = React.createClass({
             <li><a href="#">Contact</a></li>
           </ul>
         </header>
-        <div className={"image-wrapper" + minimize}>
-          <h1>Software Developer</h1>
-          <div className="line"></div>
-          <h1>Seattle, WA</h1>
-        </div>
       </div>
     )
   },
@@ -38,11 +33,11 @@ module.exports = React.createClass({
   handleScroll: function() {
     var y = window.scrollY;
 
-    if (y > 200) {
+    if (y > 200 && !this.state.minimize) {
       this.setState({minimize: true});
     }
 
-    if (y < 200) {
+    if (y < 200 & this.state.minimize) {
       this.setState({minimize: false});
     }
 
