@@ -1,4 +1,6 @@
-$top-offset: 120px;
+$menu-height: 120px;
+$menu-min: 60px;
+$project-size: 200px;
 
 h1 {
   font-family: 'Roboto', sans-serif;
@@ -7,6 +9,8 @@ h1 {
 }
 
 a, a:visited {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   text-decoration: none;
   color: #fff;
   transition: color 0.3s cubic-bezier(0.25, 0.8, 0.50, 0.95);
@@ -21,15 +25,16 @@ header, .name, .nav, .nav a, .underlay, .minimize {
 }
 
 header {
+  z-index: 999;
   width: 100%;
-  height: 150px;
+  height: $menu-height;
   position: fixed;
   background-color: rgba(0, 0, 0, 0);
 
   .name {
     display: inline-block;
-    height: 150px;
-    line-height: 150px;
+    height: $menu-height;
+    line-height: $menu-height;
     float: left;
     font-size: 3em;
     color: #fff;
@@ -40,14 +45,14 @@ header {
     float: right;
 
     a {
-      line-height: 150px;
+      line-height: $menu-height;
       padding: 0 40px;
     }
   }
 
   .underlay {
     background: #000;
-    height: 150px;
+    height: $menu-height;
     opacity: 0;
     width: 100%;
 
@@ -56,18 +61,18 @@ header {
 }
 
 header.minimize {
-  height: 75px;
+  height: $menu-min;
   background-color: rgba(0, 0, 0, 255);
 
 
   .name {
-    height: 75px;
-    line-height: 75px;
+    height: $menu-min;
+    line-height: $menu-min;
     transform: scale(0.7);
   }
 
   a {
-    line-height: 75px;
+    line-height: $menu-min;
   }
 
   .underlay {
@@ -81,10 +86,15 @@ header.minimize {
 }
 
 .content-wrapper {
-  margin: 0 20%;
+  width: 80%;
+  margin: 0 auto;
   max-width: 1400px;
-  padding-top: $top-offset;
+  padding-top: 40px;
   height: 1000px;
+  h1 {
+    text-align: center;
+    font-size: 3em;
+  }
 }
 
 .image-wrapper {
@@ -97,7 +107,7 @@ header.minimize {
   align-items: center;
   justify-content: center;
   h1 {
-    font-size: 4em;
+    font-size: 3.5em;
     display: block;
   }
 }
@@ -111,13 +121,56 @@ header.minimize {
 }
 
 .project {
-  width: 400px;
+  width: $project-size;
+  height: $project-size + 50px;
+  display: inline-block;
+  margin: 30px 7%;
+  overflow: hidden;
+
 
   img {
-    height: 300px;
-    width: 300px;
+    height: $project-size;
+    width: $project-size;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.50, 0.95);
   }
+
+  .overlay {
+    height: $project-size;
+    width: $project-size;
+    position: absolute;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.50, 0.95);
+    z-index: 997;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.2em;
+  }
+
   .description {
-    background-color: salmon;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    position: relative;
+    background-color: #ddd;
+    width: $project-size;
+    top: -6px;
+    padding: 10px 0;
+    margin: 0;
+    z-index: 998;
   }
+}
+
+.project:hover img {
+  transform: scale(1.2);
+}
+
+.project:hover .overlay {
+  opacity: 1;
+}
+
+.project-wrapper {
+  text-align: center;
 }
