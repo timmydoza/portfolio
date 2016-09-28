@@ -1,6 +1,9 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+var smoothScroll = require('smooth-scroll');
+smoothScroll.init({offset: 75, speed: 700});
+
 var Menu = require('./components/menu.jsx');
 var Projects = require('./components/projects.jsx')
 
@@ -17,7 +20,7 @@ var App = React.createClass({
         </div>
 
         <div className="content-wrapper">
-          <h1>Projects</h1>
+          <h1 id="projects" className="section">Projects</h1>
           <Projects />
         </div>
       </div>

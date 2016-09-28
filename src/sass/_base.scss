@@ -1,6 +1,6 @@
 $menu-height: 120px;
 $menu-min: 60px;
-$project-size: 200px;
+$project-size: 250px;
 
 h1 {
   font-family: 'Roboto', sans-serif;
@@ -98,8 +98,8 @@ header.minimize {
 }
 
 .image-wrapper {
-  background-size: 100%;
-  background-image: url(img/background.jpg);
+  background-size: cover;
+  background-image: url(img/Untitled-0.jpg);
   height: 500px;
   display: flex;
   color: #fff;
@@ -124,7 +124,7 @@ header.minimize {
   width: $project-size;
   height: $project-size + 50px;
   display: inline-block;
-  margin: 30px 7%;
+  margin: 30px 5%;
   overflow: hidden;
 
 
@@ -155,7 +155,7 @@ header.minimize {
     font-weight: 300;
     position: relative;
     background-color: #ddd;
-    width: $project-size;
+    width: $project-size + 1;
     top: -6px;
     padding: 10px 0;
     margin: 0;

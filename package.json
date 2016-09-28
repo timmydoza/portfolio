@@ -11,7 +11,8 @@
   "dependencies": {
     "compression": "^1.6.2",
     "express": "^4.13.4",
-    "normalize.css": "^4.1.1"
+    "normalize.css": "^4.1.1",
+    "smooth-scroll": "github:cferdinandi/smooth-scroll"
   },
   "devDependencies": {
     "gulp-sass": "^2.3.1",
