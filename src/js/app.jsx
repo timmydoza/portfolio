@@ -1,6 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+require('./../sass/application.scss');
+
 var smoothScroll = require('smooth-scroll');
 smoothScroll.init({offset: 75, speed: 700});
 
