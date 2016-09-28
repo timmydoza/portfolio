@@ -1,0 +1,16 @@
+:global {@import '../../node_modules/normalize.css/normalize';}
+
+.content {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1400px;
+  padding-top: 40px;
+  height: 1000px;
+  h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    margin: 0;
+    text-align: center;
+    font-size: 3em;
+  }
+}

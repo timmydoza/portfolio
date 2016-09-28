@@ -1,4 +1,5 @@
 var React = require('react');
+var styles = require('./style.scss');
 
 module.exports = React.createClass({
 
@@ -12,16 +13,16 @@ module.exports = React.createClass({
   },
 
   render: function () {
-    var minimize = this.state.minimize ? ' minimize' : '';
+    var minimize = this.state.minimize ? ' ' + styles.minimize : '';
 
     return (
-      <header className={minimize}>
-        <div className="container">
-          <h1 className={"name" + minimize}>Tim Mendoza</h1>
-          <nav className="nav">
-            <a data-scroll href="#projects">Projects</a>
-            <a data-scroll href="#">Resume</a>
-            <a data-scroll href="#">Contact</a>
+      <header className={styles.menu + minimize}>
+        <div className={styles.container}>
+          <h1 className={styles.name + minimize}>Tim Mendoza</h1>
+          <nav className={styles.nav}>
+            <a className={styles.link} data-scroll href="#projects">Projects</a>
+            <a className={styles.link} data-scroll href="#">Resume</a>
+            <a className={styles.link} data-scroll href="#">Contact</a>
           </nav>
         </div>
       </header>

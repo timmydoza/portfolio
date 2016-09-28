@@ -1,0 +1,56 @@
+$project-size: 250px;
+
+.project {
+  width: $project-size;
+  height: $project-size + 50px;
+  display: inline-block;
+  margin: 30px 5%;
+  overflow: hidden;
+
+
+  img {
+    height: $project-size;
+    width: $project-size;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.50, 0.95);
+  }
+
+  .overlay {
+    height: $project-size;
+    width: $project-size;
+    position: absolute;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.50, 0.95);
+    z-index: 997;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.2em;
+  }
+
+  .description {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    position: relative;
+    background-color: #ddd;
+    width: $project-size + 1;
+    top: -6px;
+    padding: 10px 0;
+    margin: 0;
+    z-index: 998;
+  }
+}
+
+.project:hover img {
+  transform: scale(1.2);
+}
+
+.project:hover .overlay {
+  opacity: 1;
+}
+
+.project-wrapper {
+  text-align: center;
+}

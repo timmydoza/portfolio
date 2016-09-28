@@ -8,15 +8,15 @@ var Menu = require('./components/menu');
 var Background = require('./components/background');
 var Projects = require('./components/projects');
 
+var styles = require('./style.scss');
+
 var App = React.createClass({
   render: function() {
     return (
       <div>
         <Menu />
         <Background />
-
-
-        <div className="content-wrapper">
+        <div className={styles.content}>
           <h1 id="projects" className="section">Projects</h1>
           <Projects />
         </div>
