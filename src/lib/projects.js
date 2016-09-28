@@ -9,28 +9,28 @@ module.exports = [
 
   {
     name: 'Who Said It?',
-    img: '/css/img/mozart.jpg',
+    img: '/css/img/who3.jpg',
     href: 'http://timmydoza.com/mozart',
     description: 'A guessing game.'
   },
 
   {
     name: 'MEAN-Auth',
-    img: '/css/img/mozart.jpg',
+    img: '/css/img/lock2.jpg',
     href: 'http://timmydoza.com/mozart',
     description: 'Authenication and stuff'
   },
 
   {
     name: 'Express Photo Gallery',
-    img: '/css/img/mozart.jpg',
+    img: '/css/img/photos.jpg',
     href: 'http://timmydoza.com/mozart',
     description: 'A guessing game.'
   },
 
   {
     name: 'Raspberry Pi',
-    img: '/css/img/mozart.jpg',
+    img: '/css/img/pi.jpg',
     href: 'http://timmydoza.com/mozart',
     description: 'A guessing game.'
   },

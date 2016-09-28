@@ -20,8 +20,8 @@ module.exports = React.createClass({
           <h1 className={"name" + minimize}>Tim Mendoza</h1>
           <nav className="nav">
             <a data-scroll href="#projects">Projects</a>
-            <a href="#">Resume</a>
-            <a href="#">Contact</a>
+            <a data-scroll href="#">Resume</a>
+            <a data-scroll href="#">Contact</a>
           </nav>
         </div>
       </header>
