@@ -1,13 +1,13 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-require('./../sass/application.scss');
-
 var smoothScroll = require('smooth-scroll');
 smoothScroll.init({offset: 75, speed: 700});
 
-var Menu = require('./components/menu.jsx');
-var Projects = require('./components/projects.jsx')
+var Menu = require('./components/menu');
+var Projects = require('./components/projects')
+
+
 
 var App = React.createClass({
   render: function() {

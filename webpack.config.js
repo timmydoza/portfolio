@@ -1,7 +1,7 @@
 var autoprefixer = require('autoprefixer');
 
 module.exports = {
-  entry: './src/js/app.jsx',
+  entry: './src/entry.js',
 
   output: {
     filename: 'bundle.js',
@@ -11,7 +11,6 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.jsx$/,
         exclude: /\node_modules/,
         loader: 'babel-loader'
       },

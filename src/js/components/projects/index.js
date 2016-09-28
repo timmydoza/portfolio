@@ -1,7 +1,7 @@
 var React = require('react');
-var Project = require('./project.jsx');
+var Project = require('./project');
 
-var projects = require('../../lib/projects.js');
+var projects = require('../../../lib/projects.js');
 
 module.exports = React.createClass({
   render: function() {
