@@ -1,3 +1,5 @@
+var autoprefixer = require('autoprefixer');
+
 module.exports = {
   entry: './src/js/app.jsx',
 
@@ -16,16 +18,26 @@ module.exports = {
 
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        loaders: ["style", "css", "postcss", "sass"]
       },
 
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-        loader: 'file'
-        // query: {
-        //   name: 'static/media/[name].[hash:8].[ext]'
-        // }
+        loader: 'file',
+        query: {
+          name: 'img/[name].[hash:8].[ext]'
+        }
       }
     ]
-  }
+  },
+  postcss: [
+    autoprefixer({
+      browsers: [
+        '>1%',
+        'last 4 versions',
+        'Firefox ESR',
+        'not ie < 9', // React doesn't support IE8 anyway
+      ]
+    })
+  ]
 }
