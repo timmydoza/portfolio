@@ -7,6 +7,7 @@ smoothScroll.init({offset: 75, speed: 700});
 var Menu = require('./components/menu');
 var Background = require('./components/background');
 var Projects = require('./components/projects');
+var Skills = require('./components/skills');
 
 var styles = require('./style.scss');
 
@@ -19,6 +20,8 @@ var App = React.createClass({
         <div className={styles.content}>
           <h1 id="projects" className="section">Projects</h1>
           <Projects />
+          <h1 id="skills" className="section">Skills</h1>
+          <Skills />
         </div>
       </div>
     )
