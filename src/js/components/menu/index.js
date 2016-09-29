@@ -7,9 +7,22 @@ module.exports = React.createClass({
     return {minimize: false};
   },
 
-  componentWillMount: function() {
+  componentDidMount: function() {
     window.addEventListener('scroll', this.handleScroll);
     this.handleScroll();
+  },
+
+  handleScroll: function() {
+    var y = window.scrollY;
+
+    if (y > 100 && !this.state.minimize) {
+      this.setState({minimize: true});
+    }
+
+    if (y < 100 & this.state.minimize) {
+      this.setState({minimize: false});
+    }
+
   },
 
   render: function () {
@@ -27,18 +40,5 @@ module.exports = React.createClass({
         </div>
       </header>
     )
-  },
-
-  handleScroll: function() {
-    var y = window.scrollY;
-
-    if (y > 100 && !this.state.minimize) {
-      this.setState({minimize: true});
-    }
-
-    if (y < 100 & this.state.minimize) {
-      this.setState({minimize: false});
-    }
-
   }
 });

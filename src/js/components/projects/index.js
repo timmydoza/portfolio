@@ -9,9 +9,11 @@ module.exports = React.createClass({
     return (
       <div className="container">
         <h1 id="projects">Projects</h1>
+
         {projects.map(function(project) {
           return <Project project={project}/>
         })}
+        
       </div>
     )
   }
