@@ -1,25 +1,44 @@
-.image {
-  background-size: cover;
-  background-image: url(../../../img/Untitled-0.jpg);
+.background {
   height: 500px;
-  display: flex;
+  position: relative;
   color: #fff;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  display: block;
+}
+
+.text {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 150px;
+
   h1 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 100;
-    margin: 0;
-    font-size: 3.5em;
-    display: block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  margin: 0;
+  font-size: 3.5em;
   }
 }
 
+.image {
+  width: 100%;
+  height: 500px;
+  min-width: 1400px;
+  animation: bgzoom 15s ease-out;
+  transform: perspective(100px) translate3d(-20px, 10px, 16px) rotate(0.01deg);
+}
+
 .line {
+  display: inline-block;
+  text-align: center;
   border-radius: 5px;
   margin: 50px;
   height: 2px;
   width: 5%;
   background: #fff;
+}
+
+@keyframes bgzoom {
+  from {transform: perspective(100px) translate3d(0px, 0px, 8px) rotate(0.01deg);}
+  to {transform: perspective(100px) translate3d(-20px, 10px,16px) rotate(0.01deg);}
 }
