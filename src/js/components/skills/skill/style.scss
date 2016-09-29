@@ -1,0 +1,37 @@
+$skill-height: 30px;
+$border-radius: 5px;
+
+@mixin font() {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #fff;
+  line-height: $skill-height;
+}
+
+.skillName {
+  @include font()
+  position: absolute;
+  padding-left: 5px;
+}
+
+.skill {
+  height: $skill-height;
+  background-color: #666;
+  margin: 20px;
+  border-radius: $border-radius;
+}
+
+.bar {
+  height: $skill-height;
+  width: 0%;
+  transition: width ease-in-out .7s;
+  border-bottom-left-radius: $border-radius;
+  border-top-left-radius: $border-radius;
+}
+
+.percent {
+  @include font()
+  position: relative;
+  float: right;
+  padding-right: 5px;
+}
