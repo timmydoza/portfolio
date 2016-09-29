@@ -17,12 +17,8 @@ var App = React.createClass({
       <div>
         <Menu />
         <Background />
-        <div className={styles.content}>
-          <h1 id="projects" className="section">Projects</h1>
-          <Projects />
-          <h1 id="skills" className="section">Skills</h1>
-          <Skills />
-        </div>
+        <Projects />
+        <Skills />
       </div>
     )
   }
