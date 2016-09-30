@@ -1,8 +1,18 @@
 .container {
   composes: container from './../../main.scss';
-  height: 500px;
+  height: 400px;
 }
 
 .heading {
   composes: heading from './../../main.scss';
+}
+
+.image {
+  height: 300px;
+  border-radius: 100%;
+  float: left;
+}
+
+.text {
+  margin: 40px;
 }
