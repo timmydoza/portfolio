@@ -10,8 +10,6 @@ var About = require('./components/about');
 var Projects = require('./components/projects');
 var Skills = require('./components/skills');
 
-var styles = require('./style.scss');
-
 var App = React.createClass({
   render: function() {
     return (

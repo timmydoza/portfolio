@@ -77,6 +77,7 @@ $menu-min: 60px;
 }
 
 .container {
+  composes: container from './../../main.scss';
   padding: 0 10%;
   // max-width: 1400px;
 }

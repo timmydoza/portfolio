@@ -10,8 +10,8 @@ module.exports = React.createClass({
   render: function() {
     return (
       <div className={styles.background}>
-        <div className="container">
-          <h1 id="skills" className={styles.white}>Skills</h1>
+        <div className={styles.container}>
+          <h1 id="skills" className={styles.heading}>Skills</h1>
             <div className={styles.skills}>
 
               {skillData.map(function(skill, index) {return (

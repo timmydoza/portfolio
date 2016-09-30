@@ -3,10 +3,15 @@
   height: 500px;
 }
 
-.white {
-  color: #fff;
-}
-
 .skills {
   margin: 0 10%;
+}
+
+.container {
+  composes: container from './../../main.scss';
+}
+
+.heading {
+  composes: heading from './../../main.scss';
+  color: white;
 }

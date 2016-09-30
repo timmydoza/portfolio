@@ -5,8 +5,8 @@ module.exports = React.createClass({
   render: function() {
     return (
       <div>
-        <div className="container" style={{height: '500px'}}>
-          <h1 id="about">About</h1>
+        <div className={styles.container}>
+          <h1 id="about" className={styles.heading}>About</h1>
         </div>
       </div>
     )

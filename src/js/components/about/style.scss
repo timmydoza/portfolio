@@ -1,0 +1,8 @@
+.container {
+  composes: container from './../../main.scss';
+  height: 500px;
+}
+
+.heading {
+  composes: heading from './../../main.scss';
+}
