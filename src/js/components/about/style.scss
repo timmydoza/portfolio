@@ -1,6 +1,10 @@
+$image-size: 250px;
+$image-margin: 50px;
+
+
 .container {
   composes: container from './../../main.scss';
-  height: 400px;
+  height: 375px;
 }
 
 .heading {
@@ -8,11 +12,32 @@
 }
 
 .image {
-  height: 300px;
+  height: $image-size;
   border-radius: 100%;
   float: left;
+  margin-right: $image-margin;
 }
 
 .text {
-  margin: 40px;
+  font-size: 1.5em;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  text-align: justify;
+  line-height: 30px;
+}
+
+.text::first-letter {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+.icons {
+  position: relative;
+  right: ($image-size + $image-margin) / 2;
+  text-align: center;
+}
+
+.icon {
+  height: 50px;
+  margin: 0 20px;
 }

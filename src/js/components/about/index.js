@@ -10,7 +10,21 @@ module.exports = React.createClass({
         <div className={styles.container}>
           <h1 id="about" className={styles.heading}>About</h1>
           <img src="img/Tim.jpg" className={styles.image}/>
-          <span className={styles.text}>{text}</span>
+          <p className={styles.text}>{text}</p>
+          <div className={styles.icons}>
+            <a href="mailto:timmydoza@gmail.com">
+              <img src="img/gmail.png" className={styles.icon} />
+            </a>
+            <a href="https://github.com/timmydoza">
+              <img src="img/github.png" className={styles.icon} />
+            </a>
+            <a href="https://linkedin.com/in/timmydoza">
+              <img src="img/linkedin.png" className={styles.icon} />
+            </a>
+            <a href="http://npmjs.com/~timmydoza">
+              <img src="img/npm.png" className={styles.icon} />
+            </a>
+          </div>
         </div>
       </div>
     )

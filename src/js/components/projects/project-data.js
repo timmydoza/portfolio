@@ -9,7 +9,7 @@ module.exports = [
 
   {
     name: 'Who Said It?',
-    img: 'img/who3.jpg',
+    img: 'img/who.jpg',
     href: 'http://timmydoza.com/mozart',
     description: 'A guessing game.'
   },

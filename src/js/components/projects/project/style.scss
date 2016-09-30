@@ -7,6 +7,9 @@ $project-size: 250px;
   margin: 30px 5%;
   overflow: hidden;
 
+  a {
+    text-decoration: none;
+  }
 
   img {
     height: $project-size;
