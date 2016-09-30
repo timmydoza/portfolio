@@ -9,7 +9,7 @@ module.exports = React.createClass({
         <div className={styles.text}>
           <h1>Software Developer</h1>
           <div className={styles.line}></div>
-          <h1>Seattle, WA</h1>
+          <h1>Boston, MA</h1>
         </div>
       </div>
     );

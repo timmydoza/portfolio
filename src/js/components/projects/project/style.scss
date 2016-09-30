@@ -22,20 +22,31 @@ $project-size: 250px;
     width: $project-size;
     position: absolute;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.50, 0.95);
     z-index: 997;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    margin: 25px;
+    font-family: 'Roboto Slab', serif;
     font-weight: 300;
+    text-align: center;
+    line-height: 25px;
+  }
+
+  p::first-letter {
     font-size: 1.2em;
+    font-weight: 400;
   }
 
   .description {
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-weight: 00;
     position: relative;
     background-color: #ddd;
     width: $project-size + 1;

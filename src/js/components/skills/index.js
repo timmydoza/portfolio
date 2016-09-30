@@ -4,7 +4,7 @@ var styles = require('./style.scss');
 var Skill = require('./skill');
 var skillData = require('./skill-data.js');
 
-var delay = 250;
+var delay = 150;
 
 module.exports = React.createClass({
   render: function() {

@@ -9,7 +9,7 @@ var Background = require('./components/background');
 var About = require('./components/about');
 var Projects = require('./components/projects');
 var Skills = require('./components/skills');
-var Contact = require('./components/contact');
+var Footer = require('./components/footer');
 
 var App = React.createClass({
   render: function() {
@@ -21,7 +21,7 @@ var App = React.createClass({
         <About />
         <Skills />
         <Projects />
-        <Contact />
+        <Footer />
       </div>
 
     )

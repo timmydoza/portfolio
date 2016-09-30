@@ -1,10 +1,10 @@
-$image-size: 250px;
-$image-margin: 50px;
+$image-size: 300px;
+$image-margin: 60px;
 
 
 .container {
   composes: container from './../../main.scss';
-  height: 375px;
+  height: 450px;
 }
 
 .heading {
@@ -23,7 +23,7 @@ $image-margin: 50px;
   font-family: 'Roboto Slab', serif;
   font-weight: 300;
   text-align: justify;
-  line-height: 30px;
+  line-height: 35px;
 }
 
 .text::first-letter {
@@ -32,6 +32,7 @@ $image-margin: 50px;
 }
 
 .icons {
+  padding-top: 20px;
   position: relative;
   right: ($image-size + $image-margin) / 2;
   text-align: center;
@@ -39,5 +40,5 @@ $image-margin: 50px;
 
 .icon {
   height: 50px;
-  margin: 0 20px;
+  margin: 0 35px;
 }

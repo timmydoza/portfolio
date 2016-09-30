@@ -8,7 +8,8 @@ module.exports = React.createClass({
     return (
       <div className={styles.background}>
         <div className={styles.container}>
-          <h1 id="contact" className={styles.heading}>Contact</h1>
+
+          <p className={styles.text}>Copyright 2016 Tim Mendoza</p>
 
         </div>
       </div>

@@ -1,13 +1,23 @@
 .background {
   background: linear-gradient(#333, black);
-  height: 500px;
+  height: 50px;
 }
 
 .container {
   composes: container from './../../main.scss';
+  margin-top: 0;
+  padding: 0;
 }
 
 .heading {
   composes: heading from './../../main.scss';
   color: white;
+}
+
+.text {
+  color: gray;
+  line-height: 50px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  text-align: center;
 }

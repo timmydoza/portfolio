@@ -31,12 +31,13 @@ module.exports = React.createClass({
     return (
       <header className={styles.menu + minimize}>
         <div className={styles.container}>
-          <h1 className={styles.name + minimize}>Tim Mendoza</h1>
+          <a data-scroll href="#">
+            <h1 className={styles.name + minimize}>Tim Mendoza</h1>
+          </a>
           <nav className={styles.nav}>
             <a className={styles.link} data-scroll href="#about">About</a>
             <a className={styles.link} data-scroll href="#skills">Skills</a>
             <a className={styles.link} data-scroll href="#projects">Projects</a>
-            <a className={styles.link} data-scroll href="#">Contact</a>
           </nav>
         </div>
       </header>

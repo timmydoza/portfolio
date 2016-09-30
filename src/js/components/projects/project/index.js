@@ -9,7 +9,7 @@ module.exports = React.createClass({
         <a href={this.props.project.href}>
 
           <div className={styles.overlay}>
-          {this.props.project.description}
+            <p>{this.props.project.description}</p>
           </div>
 
           <img src={this.props.project.img} />
@@ -17,7 +17,7 @@ module.exports = React.createClass({
           <div className={styles.description}>
             {this.props.project.name}
           </div>
-          
+
         </a>
 
       </div>

@@ -24,7 +24,7 @@
   width: 100%;
   height: 500px;
   min-width: 1400px;
-  animation: bgzoom 15s ease-out;
+  animation: bgzoom 20s ease-out;
   transform: perspective(100px) translate3d(-20px, 10px, 16px) rotate(0.01deg);
 }
 
@@ -40,5 +40,5 @@
 
 @keyframes bgzoom {
   from {transform: perspective(100px) translate3d(0px, 0px, 8px) rotate(0.01deg);}
-  to {transform: perspective(100px) translate3d(-20px, 10px,16px) rotate(0.01deg);}
+  to {transform: perspective(100px) translate3d(-30px, 20px, 25px) rotate(0.01deg);}
 }

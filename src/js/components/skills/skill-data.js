@@ -1,39 +1,60 @@
-module.exports = [
+var colors = [
+  "#0d54c6",
+  "#c65e0d",
+  "#0ea342",
+  "#d32a2a"
+]
+
+var skills = [
 
   {
     "name": "JavaScript",
-    "color": "#0d54c6",
-    "width": "80%"
+    "width": "85%"
   },
 
   {
-    "name": "Python",
-    "color": "#c65e0d",
-    "width": "50%"
+    "name": "Node.JS",
+    "width": "75%"
   },
 
   {
-    "name": "Node.js",
-    "color": "#0ea342",
-    "width": "60%"
-  },
-
-  {
-    "name": "Html5",
-    "color": "#d32a2a",
-    "width": "55%"
-  },
-
-  {
-    "name": "CSS3",
-    "color": "#0d54c6",
+    "name": "MongoDB",
     "width": "40%"
   },
 
   {
-    "name": "ReactJS",
-    "color": "#c65e0d",
+    "name": "Angular.JS",
+    "width": "60%"
+  },
+
+  {
+    "name": "React",
+    "width": "55%"
+  },
+
+  {
+    "name": "Test-driven development",
+    "width": "75%"
+  },
+
+  {
+    "name": "HTML5",
+    "width": "50%"
+  },
+
+  {
+    "name": "CSS / SCSS",
     "width": "45%"
+  },
+
+  {
+    "name": "Python",
+    "width": "65%"
   }
 
 ];
+
+module.exports = skills.map(function(skill, index) {
+    skill.color = colors[index % colors.length];
+    return skill
+  });
