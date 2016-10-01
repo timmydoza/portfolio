@@ -7,8 +7,9 @@ $project-size: 250px;
   margin: 30px 5%;
   overflow: hidden;
 
-  a {
+  a, a:visited {
     text-decoration: none;
+    color: black;
   }
 
   img {
