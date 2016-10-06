@@ -33,13 +33,13 @@ module.exports = React.createClass({
             <a href={"mailto:" + email + "@" + domain}>
               <img src="img/gmail.png" className={styles.icon} />
             </a>
-            <a href="https://github.com/timmydoza">
+            <a href="https://github.com/timmydoza" target="_blank">
               <img src="img/github.png" className={styles.icon} />
             </a>
-            <a href="https://linkedin.com/in/timmydoza">
+            <a href="https://linkedin.com/in/timmydoza" target="_blank">
               <img src="img/linkedin.png" className={styles.icon} />
             </a>
-            <a href="http://npmjs.com/~timmydoza">
+            <a href="https://npmjs.com/~timmydoza" target="_blank">
               <img src="img/npm.png" className={styles.icon} />
             </a>
           </div>
