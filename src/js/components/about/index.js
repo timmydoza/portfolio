@@ -10,9 +10,9 @@ var text = <p className={styles.text}>
   code to turn creative ideas into reality.  Programming has been a hobby
   of mine since the second grade, and in late 2015 I decided to make it my
   career.  Last fall I took classes in Python and Full-stack JavaScript at a small code
-  school in Seattle called <a href="https://www.codefellows.org">
+  school in Seattle called <a href="https://www.codefellows.org" target="_blank">
   Codefellows</a>. Shortly thereafter, I landed my first software gig at an integration
-  start-up called <a href="https://azuqua.com">Azuqua</a>, where I worked as an
+  start-up called <a href="https://azuqua.com" target="_blank">Azuqua</a>, where I worked as an
   application developer.
   <br /><br />
   In my spare time, you can find me practicing trumpet and piano, playing with
@@ -27,7 +27,7 @@ module.exports = React.createClass({
       <div>
         <div className={styles.container}>
           <h1 id="about" className={styles.heading}>About</h1>
-          <img src="img/Tim.jpg" className={styles.image}/>
+          <img src="img/tim.jpg" className={styles.image}/>
           {text}
           <div className={styles.icons}>
             <a href={"mailto:" + email + "@" + domain}>
