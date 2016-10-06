@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "static": "mkdir -p build && cp src/index.html build/index.html && cp -r src/img build/",
     "dev": "npm run static && webpack-dev-server --content-base build --inline --progress --host 0.0.0.0",
-    "postinstall": "npm install && webpack --optimize-minimize"
+    "postinstall": "webpack --optimize-minimize"
   },
   "author": "Tim Mendoza",
   "license": "MIT",
@@ -17,9 +17,7 @@
     "normalize.css": "^4.1.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "smooth-scroll": "github:cferdinandi/smooth-scroll"
-  },
-  "devDependencies": {
+    "smooth-scroll": "github:cferdinandi/smooth-scroll",
     "autoprefixer": "^6.5.0",
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
@@ -33,5 +31,7 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.1"
+  },
+  "devDependencies": {
   }
 }
