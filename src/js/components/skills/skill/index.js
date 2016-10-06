@@ -6,8 +6,9 @@ module.exports = React.createClass({
 
     var bar = this.refs.bar;
     var props = this.props;
+    var skills = document.getElementById('skills');
 
-    var threshold = (window.skills.getBoundingClientRect().top + window.scrollY) - (window.innerHeight * 0.6);
+    var threshold = (skills.getBoundingClientRect().top + window.scrollY) - (window.innerHeight * 0.6);
 
     window.addEventListener('scroll', function() {
 

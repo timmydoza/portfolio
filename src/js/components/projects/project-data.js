@@ -10,8 +10,8 @@ module.exports = [
   {
     name: 'Who Said It?',
     img: 'img/who.jpg',
-    href: 'http://timmydoza.com/mozart',
-    description: 'A guessing game to test your knowledge of history and politics.  Try and guess is a given quote was said by a presidential candidate or evil dictator.'
+    href: 'http://timmydoza.com/whosaidit',
+    description: 'A guessing game to test your knowledge of history and politics.  Try to guess if a given quote was said by a presidential candidate or evil dictator.'
   },
 
   {
@@ -25,21 +25,21 @@ module.exports = [
     name: 'Express Photo Gallery',
     img: 'img/photos.jpg',
     href: 'https://github.com/timmydoza/express-photo-gallery',
-    description: 'An ExpressJS middleware wrapper of the Lightgallery JQuery plugin.  Creates stylish and responsive photogalleries in minutes.'
+    description: 'An ExpressJS middleware wrapper of the Lightgallery JQuery plugin.  Creates stylish and responsive photo galleries in minutes.'
   },
 
   {
-    name: 'Raspberry Pi',
+    name: 'RPi_7SegDisplay',
     img: 'img/pi.jpg',
-    href: 'https://github.com/timmydoza/express-photo-gallery',
+    href: 'https://github.com/timmydoza/RPi_7SegDisplay',
     description: 'A python library for displaying messages on an eight-digit seven-segment LED display driven by two 74HC595 shift registers connected to a Raspberry Pi.'
-  },
-
-  {
-    name: 'Nim',
-    img: 'img/nim.jpg',
-    href: 'https://github.com/timmydoza/nim',
-    description: 'A mathematical game of strategy in which two players take turns removing tiles from distinct stacks.  The player to take the last piece wins the game.'
   }
+
+  // {
+  //   name: 'Nim',
+  //   img: 'img/nim.jpg',
+  //   href: 'https://github.com/timmydoza/nim',
+  //   description: 'A mathematical game of strategy in which two players take turns removing tiles from distinct stacks.  The player to take the last piece wins the game.'
+  // }
 
 ];

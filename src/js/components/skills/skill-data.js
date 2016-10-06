@@ -1,8 +1,8 @@
 var colors = [
-  "#0d54c6",
+  "#0d54b6",
   "#c65e0d",
   "#0ea342",
-  "#d32a2a"
+  "#c32a2a"
 ]
 
 var skills = [

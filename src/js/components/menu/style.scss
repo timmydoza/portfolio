@@ -35,7 +35,7 @@ $menu-min: 60px;
     height: $menu-height;
     line-height: $menu-height;
     float: left;
-    font-size: 3em;
+    font-size: 3.2em;
     color: #fff;
   }
 
@@ -44,6 +44,7 @@ $menu-min: 60px;
     float: right;
 
     a {
+      font-size: 1.2em;
       line-height: $menu-height;
       padding: 0 40px;
     }
