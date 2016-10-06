@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "static": "mkdir -p build && cp src/index.html build/index.html && cp -r src/img build/",
     "dev": "npm run static && webpack-dev-server --content-base build --inline --progress --host 0.0.0.0",
-    "postinstall": "webpack --optimize-minimize"
+    "postinstall": "npm install && webpack --optimize-minimize"
   },
   "author": "Tim Mendoza",
   "license": "MIT",
