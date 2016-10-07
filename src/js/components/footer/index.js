@@ -9,7 +9,9 @@ module.exports = React.createClass({
       <div className={styles.background}>
         <div className={styles.container}>
 
-          <p className={styles.text}>Copyright 2016 Tim Mendoza</p>
+          <p className={styles.text}>Built with React.
+            &nbsp;<a href="https://github.com/timmydoza/portfolio" target="_blank">Source Code</a>
+          </p>
 
         </div>
       </div>
