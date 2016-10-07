@@ -37,7 +37,7 @@ module.exports = React.createClass({
               <img src="img/github.png" className={styles.icon} />
             </a>
             <a href="https://linkedin.com/in/timmydoza" target="_blank">
-              <img src="img/linkedin.png" className={styles.icon} />
+              <img src="img/in.png" className={styles.icon} />
             </a>
             <a href="https://npmjs.com/~timmydoza" target="_blank">
               <img src="img/npm.png" className={styles.icon} />
