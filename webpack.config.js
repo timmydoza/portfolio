@@ -1,6 +1,15 @@
 var autoprefixer = require('autoprefixer');
+var webpack = require('webpack');
 
 module.exports = {
+  plugins:[
+    new webpack.DefinePlugin({
+      'process.env':{
+        'NODE_ENV': '"' + process.env.NODE_ENV + '"'
+      }
+    })
+  ],
+
   entry: './src/entry.js',
 
   output: {
