@@ -1,31 +1,34 @@
-var React = require('react');
-var styles = require('./style.scss');
+import React from 'react';
+import styles from './style.scss';
 
-module.exports = React.createClass({
+export default class Menu extends React.Component {
 
-  getInitialState: function() {
-    return {minimize: false};
-  },
+  constructor() {
+    super();
+    this.state = {
+      minimize: false
+    }
 
-  componentDidMount: function() {
+    this.handleScroll = () => {
+        var y = window.scrollY;
+
+        if (y > 100 && !this.state.minimize) {
+          this.setState({minimize: true});
+        }
+
+        if (y < 100 && this.state.minimize) {
+          this.setState({minimize: false});
+        }
+
+      }
+  }
+
+  componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
     this.handleScroll();
-  },
+  }
 
-  handleScroll: function() {
-    var y = window.scrollY;
-
-    if (y > 100 && !this.state.minimize) {
-      this.setState({minimize: true});
-    }
-
-    if (y < 100 & this.state.minimize) {
-      this.setState({minimize: false});
-    }
-
-  },
-
-  render: function () {
+  render() {
     var minimize = this.state.minimize ? ' ' + styles.minimize : '';
 
     return (
@@ -43,4 +46,4 @@ module.exports = React.createClass({
       </header>
     )
   }
-});
+}
