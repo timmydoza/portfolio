@@ -2,7 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 var smoothScroll = require('smooth-scroll');
-smoothScroll.init({offset: 75, speed: 700});
+new smoothScroll({offset: 75, speed: 700});
 
 var Menu = require('./components/menu');
 var Background = require('./components/background');

@@ -7,6 +7,14 @@ module.exports = {
       'process.env':{
         'NODE_ENV': '"' + process.env.NODE_ENV + '"'
       }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: [
+          autoprefixer
+        ],
+        context: __dirname //https://github.com/webpack-contrib/css-loader/issues/413#issuecomment-283944881
+      }
     })
   ],
 
@@ -18,7 +26,7 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         exclude: /\node_modules/,
         loader: 'babel-loader'
@@ -26,26 +34,16 @@ module.exports = {
 
       {
         test: /\.scss$/,
-        loaders: ["style", "css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]", "postcss", "sass"]
+        loaders: ["style-loader", "css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]", "postcss-loader", "sass-loader"]
       },
 
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-        loader: 'file',
+        loader: 'file-loader',
         query: {
           name: 'img/[name].[hash:8].[ext]'
         }
       }
     ]
-  },
-  postcss: [
-    autoprefixer({
-      browsers: [
-        '>1%',
-        'last 4 versions',
-        'Firefox ESR',
-        'not ie < 9', // React doesn't support IE8 anyway
-      ]
-    })
-  ]
+  }
 }
