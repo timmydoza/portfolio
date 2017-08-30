@@ -1,6 +1,10 @@
 import React from 'react';
 import styles from './style.scss';
 
+import { Grid, Row, Column } from '../layout';
+
+import throttle from 'lodash.throttle';
+
 export default class Menu extends React.Component {
 
   constructor() {
@@ -24,7 +28,7 @@ export default class Menu extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', throttle(this.handleScroll, 50));
     this.handleScroll();
   }
 
@@ -33,6 +37,7 @@ export default class Menu extends React.Component {
 
     return (
       <header className={styles.menu + minimize}>
+        <Grid>
         <div className={styles.container}>
           <a data-scroll href="#">
             <h1 className={styles.name + minimize}>Tim Mendoza</h1>
@@ -43,6 +48,7 @@ export default class Menu extends React.Component {
             <a className={styles.link} data-scroll href="#projects">Projects</a>
           </nav>
         </div>
+        </Grid>
       </header>
     )
   }

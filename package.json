@@ -21,6 +21,7 @@
     "css-loader": "^0.28.5",
     "express": "^4.13.4",
     "file-loader": "^0.11.2",
+    "lodash.throttle": "^4.1.1",
     "node-sass": "^4.5.3",
     "normalize.css": "^7.0.0",
     "postcss-loader": "^2.0.6",
