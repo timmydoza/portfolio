@@ -1,5 +1,7 @@
-var React = require('react');
-var styles = require('./style.scss');
+import React from 'react';
+import styles from './style.scss';
+
+import { Grid, Row, Column } from '../layout';
 
 var email = "timmydoza";
 var domain = "gmail.com";
@@ -21,11 +23,11 @@ var text = <p className={styles.text}>
   at <a href={"mailto:" + email + "@" + domain}>{email + "@" + domain}</a>.</p>
 
 
-module.exports = React.createClass({
-  render: function() {
+export default class About extends React.Component {
+  render() {
     return (
-      <div>
-        <div className={styles.container}>
+      <section>
+        <Grid>
           <h1 id="about" className={styles.heading}>About</h1>
           <img src="img/tim.jpg" className={styles.image}/>
           {text}
@@ -43,8 +45,8 @@ module.exports = React.createClass({
               <img src="img/npm.png" className={styles.icon} />
             </a>
           </div>
-        </div>
-      </div>
+        </Grid>
+      </section>
     )
   }
-});
+}

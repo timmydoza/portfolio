@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import smoothScroll from 'smooth-scroll';
-new smoothScroll({offset: 75, speed: 700});
+window.ss = new smoothScroll('a[href*="#"]', {offset: 75, speed: 700});
 
 import Menu from './components/menu';
 import Background from './components/background';

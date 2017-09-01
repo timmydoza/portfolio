@@ -1,5 +1,8 @@
-.grid {
-  margin: 0 auto;
-  width: 1200px;
-  overflow: hidden;
+:global {
+
+  .grid {
+    margin: 0 auto;
+    width: 1200px;
+    overflow: hidden;
+  }
 }

@@ -1,26 +1,28 @@
-var React = require('react');
-var styles = require('./style.scss');
+import React from 'react';
+import styles from './style.scss';
 
-var Skill = require('./skill');
-var skillData = require('./skill-data.js');
+import Skill from './skill';
+import skillData from './skill-data.js';
+
+import { Grid, Row, Column } from '../layout';
 
 var delay = 150;
 
-module.exports = React.createClass({
-  render: function() {
+export default class Skills extends React.Component {
+  render() {
     return (
-      <div className={styles.background}>
-        <div className={styles.container}>
+      <section className={styles.background}>
+        <Grid>
           <h1 id="skills" className={styles.heading}>Skills</h1>
-            <div className={styles.skills}>
+          <div className={styles.skills}>
 
-              {skillData.map(function(skill, index) {return (
-                <Skill name={skill.name} color={skill.color} width={skill.width} delay={index * delay}/>
-              )})}
+          {skillData.map(function(skill, index) {return (
+            <Skill name={skill.name} color={skill.color} width={skill.width} delay={index * delay}/>
+          )})}
 
-            </div>
-        </div>
-      </div>
+          </div>
+        </Grid>
+      </section>
     )
   }
-});
+}

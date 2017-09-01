@@ -1,34 +1,59 @@
-var React = require('react');
-var styles = require('./style.scss');
+import React from 'react';
+import styles from './style.scss';
 
-module.exports = React.createClass({
-  componentDidMount: function() {
+export default class Skill extends React.Component {
+  componentDidMount() {
 
-    var bar = this.refs.bar;
+    var {bar, percent} = this.refs;
+
     var props = this.props;
     var skills = document.getElementById('skills');
 
     var threshold = (skills.getBoundingClientRect().top + window.scrollY) - (window.innerHeight * 0.6);
 
-    window.addEventListener('scroll', function() {
+    function percentAnimate(val) {
+
+      val = parseInt(val)
+
+      var count = 0;
+
+      var loop = setInterval(() => {
+
+        if (count >= val) {
+          clearInterval(loop);
+        } else {
+          percent.innerHTML = ++count + '%';
+        }
+
+      }, 700 / val)
+
+    }
+
+    function scrollHandler() {
 
       if (window.scrollY > threshold) {
 
+        window.removeEventListener('scroll', scrollHandler);
+
         window.setTimeout(function(){
           bar.style.width = props.width
+          percentAnimate(props.width);
         }, props.delay);
+
       }
 
-    });
-  },
+    }
 
-  render: function() {
+    window.addEventListener('scroll', scrollHandler);
+  }
+
+  render() {
     return (
       <div className={styles.skill}>
         <span className={styles.skillName}>{this.props.name}</span>
-        <span className={styles.percent}>{this.props.width}</span>
+        <span className={styles.percent} ref="percent">0%</span>
         <div className={styles.bar} style={{background: this.props.color}} ref="bar"></div>
       </div>
     )
   }
-});
+}

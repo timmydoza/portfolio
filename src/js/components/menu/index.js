@@ -37,18 +37,20 @@ export default class Menu extends React.Component {
 
     return (
       <header className={styles.menu + minimize}>
+      
         <Grid>
-        <div className={styles.container}>
+
           <a data-scroll href="#">
-            <h1 className={styles.name + minimize}>Tim Mendoza</h1>
+          <h1 className={styles.name + minimize}>Tim Mendoza</h1>
           </a>
           <nav className={styles.nav}>
-            <a className={styles.link} data-scroll href="#about">About</a>
-            <a className={styles.link} data-scroll href="#skills">Skills</a>
-            <a className={styles.link} data-scroll href="#projects">Projects</a>
+          <a className={styles.link} data-scroll href="#about">About</a>
+          <a className={styles.link} data-scroll href="#skills">Skills</a>
+          <a className={styles.link} data-scroll href="#projects">Projects</a>
           </nav>
-        </div>
+
         </Grid>
+
       </header>
     )
   }

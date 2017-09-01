@@ -1,5 +1,5 @@
-var React = require('react');
-var styles = require('./style.scss');
+import React from 'react';
+import styles from './style.scss';
 
 module.exports = React.createClass({
   render: function() {
