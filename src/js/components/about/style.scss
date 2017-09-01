@@ -1,16 +1,6 @@
 $image-size: 300px;
 $image-margin: 60px;
 
-
-.container {
-  composes: container from './../../main.scss';
-  // height: 450px;
-}
-
-.heading {
-  composes: heading from './../../main.scss';
-}
-
 .image {
   height: $image-size;
   border-radius: 100%;

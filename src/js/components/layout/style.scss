@@ -5,4 +5,15 @@
     width: 1200px;
     overflow: hidden;
   }
+
+  .col {
+    float: left;
+    overflow: hidden;
+    min-height: 1px;
+    padding: 30px;
+  }
+
+  .col_12 {
+    width: 100%;
+  }
 }

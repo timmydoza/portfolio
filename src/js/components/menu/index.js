@@ -37,7 +37,7 @@ export default class Menu extends React.Component {
 
     return (
       <header className={styles.menu + minimize}>
-      
+
         <Grid>
 
           <a data-scroll href="#">

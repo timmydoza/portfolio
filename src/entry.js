@@ -1,2 +1,2 @@
-import './js'
 import './normalize.scss'
+import './js'

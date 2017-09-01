@@ -1,11 +1,11 @@
-$project-size: 250px;
+$project-height: 240px;
 
 .project {
-  width: $project-size;
-  height: $project-size + 50px;
-  display: inline-block;
-  margin: 30px 5%;
+  width: 100%;
+  height: $project-height;
+  display: block;
   overflow: hidden;
+  margin: 2em 0;
 
   a, a:visited {
     text-decoration: none;
@@ -13,44 +13,42 @@ $project-size: 250px;
   }
 
   img {
-    height: $project-size;
-    width: $project-size;
+    height: $project-height;
+    width: $project-height;
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.50, 0.95);
+    float: left;
   }
 
-  .overlay {
-    height: $project-size;
-    width: $project-size;
-    position: absolute;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.50, 0.95);
-    z-index: 997;
-    display: flex;
-    align-items: center;
+  .content {
+    height: $project-height;
+    width: calc(100% - #{$project-height});
+    float: left;
+    position: relative;
+    z-index: 1;
+    background: grey;
+
+    .col {
+      transition: transform ease-in-out .5s;
+      transform: translateX(-100%);
+
+      &.active {
+        transform: translate(0);
+      }
+    }
   }
 
   p {
-    margin: 25px;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    text-align: center;
     line-height: 25px;
-  }
-
-  p::first-letter {
-    font-size: 1.2em;
-    font-weight: 400;
   }
 
   .description {
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-weight: 00;
+    font-weight: 100;
     position: relative;
     background-color: #ddd;
-    width: $project-size + 1;
     top: -6px;
     padding: 10px 0;
     margin: 0;
@@ -60,8 +58,4 @@ $project-size: 250px;
 
 .project:hover img {
   transform: scale(1.2);
-}
-
-.project:hover .overlay {
-  opacity: 1;
 }

@@ -3,17 +3,6 @@
   height: 50px;
 }
 
-.container {
-  composes: container from './../../main.scss';
-  margin-top: 0;
-  padding: 0;
-}
-
-.heading {
-  composes: heading from './../../main.scss';
-  color: white;
-}
-
 .text {
   color: gray;
   line-height: 50px;
