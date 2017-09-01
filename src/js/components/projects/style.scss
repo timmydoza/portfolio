@@ -1,8 +1,3 @@
-.container {
-  composes: container from './../../main.scss';
-  text-align: center;
-}
-
 .heading {
   composes: heading from './../../main.scss';
 }
