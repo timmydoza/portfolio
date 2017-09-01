@@ -1,10 +1,17 @@
-var React = require('react');
-var styles = require('./style.scss');
+import React from 'react';
+import styles from './style.scss';
 
 import { Grid, Row, Column } from '../../layout';
 
-module.exports = React.createClass({
-  render: function() {
+export default class Project extends React.Component {
+
+  constructor() {
+    super();
+    this.state.active = false;
+  }
+
+  
+  render() {
     return (
       <div className={styles.project}>
 
@@ -13,7 +20,7 @@ module.exports = React.createClass({
         <img src={this.props.project.img} />
 
         <div className={styles.content}>
-          <Column col_12>
+          <Column className={styles.col+ ' ' + styles.active}>
             <h2>{this.props.project.name}</h2>
             <p>{this.props.project.description}</p>
           </Column>
@@ -22,4 +29,4 @@ module.exports = React.createClass({
       </div>
     );
   }
-});
+}

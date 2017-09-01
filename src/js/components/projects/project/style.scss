@@ -24,6 +24,7 @@ $project-height: 240px;
     width: calc(100% - #{$project-height});
     float: left;
     position: relative;
+    overflow: hidden;
     z-index: 1;
     background: grey;
 
