@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './style.scss';
+import throttle from 'lodash.throttle';
 
 export default class Skill extends React.Component {
   componentDidMount() {
@@ -29,7 +30,7 @@ export default class Skill extends React.Component {
 
     }
 
-    function scrollHandler() {
+    var scrollHandler = throttle( () => {
 
       if (window.scrollY > threshold) {
 
@@ -42,9 +43,10 @@ export default class Skill extends React.Component {
 
       }
 
-    }
+    }, 50);
 
     window.addEventListener('scroll', scrollHandler);
+    scrollHandler();
   }
 
   render() {

@@ -1,16 +1,15 @@
-var React = require('react');
-var Project = require('./project');
-var styles = require('./style.scss');
+import React from 'react';
+import Project from './project';
+import styles from './style.scss';
 import { Grid, Row, Column } from '../layout';
-
 
 var projects = require('./project-data.js');
 
-module.exports = React.createClass({
-  render: function() {
+export default class Projects extends React.Component {
+  render() {
     return (
       <section>
-        <Grid textCenter>
+        <Grid>
           <h1 id="projects" className={styles.heading}>Projects</h1>
 
           {projects.map(function(project) {
@@ -20,4 +19,4 @@ module.exports = React.createClass({
       </section>
     )
   }
-});
+}

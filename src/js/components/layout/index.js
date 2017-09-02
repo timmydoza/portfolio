@@ -1,18 +1,10 @@
 import React from 'react';
-import styles from './style.scss';
-
-function getClasses(props) {
-  var classes = Object.assign({}, props);
-  delete classes.children;
-  delete classes.state;
-  return Object.keys(classes).reduce( (p, c) => {
-    return p + c + ' ';
-  }, '');
-}
-
+import cx from 'classnames';
+window.cx = cx;
 function Grid(props) {
+
   return (
-    <div className='grid'>
+    <div className={cx('grid', props.className)}>
       {props.children}
     </div>
   )
@@ -22,17 +14,22 @@ function Row(props) {
   var classes = getClasses(props);
 
   return (
-    <div className='row ${getClasses(props)}'>
+    <div className={cx('row', props.className)}>
       {props.children}
     </div>
   )
 }
 
 function Column(props) {
-  var classes = getClasses(props);
-console.log(classes);
+
+  var classes = cx(
+    'col',
+    'col-' + (props.width ? props.width : '12'),
+    props.className
+  )
+
   return (
-    <div className={`col ${props.className}`}>
+    <div className={classes}>
       {props.children}
     </div>
   )

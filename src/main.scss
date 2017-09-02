@@ -16,3 +16,21 @@ h2 {
   margin: 0;
   font-size: 2.2em;
 }
+
+.grid {
+  margin: 0 auto;
+  width: 1200px;
+  overflow: hidden;
+}
+
+.col {
+  box-sizing: border-box;
+  float: left;
+  overflow: hidden;
+  min-height: 1px;
+  padding: 30px;
+}
+
+.col-12 {
+  width: 100%;
+}
