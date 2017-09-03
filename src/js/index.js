@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './polyfills';
 import smoothScroll from 'smooth-scroll';
-new smoothScroll('a[href*="#"]', {offset: 75, speed: 700});
+new smoothScroll('a[href*="#"]', {offset: 60, speed: 700});
 
 import Menu from './components/menu';
 import Background from './components/background';

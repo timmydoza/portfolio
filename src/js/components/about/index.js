@@ -26,9 +26,9 @@ var text = <p className={styles.text}>
 export default class About extends React.Component {
   render() {
     return (
-      <section>
+      <section id="about" className="pageSection">
         <Grid>
-          <h1 id="about" className={styles.heading}>About</h1>
+          <h1 className={styles.heading}>About</h1>
           <img src="img/tim.jpg" className={styles.image}/>
           {text}
           <div className={styles.icons}>

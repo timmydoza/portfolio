@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './style.scss';
+import CSSModules from 'react-css-modules';
 
 import Skill from './skill';
 import skillData from './skill-data.js';
@@ -8,13 +9,13 @@ import { Grid, Row, Column } from '../layout';
 
 var delay = 150;
 
-export default class Skills extends React.Component {
+class Skills extends React.Component {
   render() {
     return (
-      <section className={styles.background}>
+      <section id="skills" className='pageSection' styleName='background'>
         <Grid>
-          <h1 id="skills" className={styles.heading}>Skills</h1>
-          <div className={styles.skills}>
+          <h1 styleName='heading'>Skills</h1>
+          <div styleName='skills'>
 
           {skillData.map(function(skill, index) {return (
             <Skill name={skill.name} color={skill.color} width={skill.width} delay={index * delay}/>
@@ -26,3 +27,5 @@ export default class Skills extends React.Component {
     )
   }
 }
+
+export default CSSModules(Skills, styles);
