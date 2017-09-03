@@ -5,20 +5,15 @@ import CSSModules from 'react-css-modules';
 import { Grid, Row, Column } from '../layout';
 import throttle from 'lodash.throttle';
 
-function forEach(nodeList, fn) {
-  Array.forEach.call(nodeList, fn);
-}
-
 class Menu extends React.Component {
 
   constructor() {
     super();
     this.state = {
       minimize: false,
-      linkHighlightPosition: 0
+      linkHighlightPosition: 0,
+      movileNavOpen: false
     }
-
-
 
     this.handleScroll = () => {
         var y = window.scrollY;
@@ -43,9 +38,15 @@ class Menu extends React.Component {
 
   componentDidMount() {
     window.addEventListener('scroll', throttle(this.handleScroll, 50));
-      this.pageSections = document.querySelectorAll('.pageSection');
+    this.pageSections = document.querySelectorAll('.pageSection');
     this.handleScroll();
+    this.hamburgerClick = () => {
+      this.setState({
+        mobileNavopen: !this.state.mobileNavopen
+      });
+    }
   }
+
 
   render() {
 
@@ -56,7 +57,9 @@ class Menu extends React.Component {
       }
     );
 
-
+    var trayStyles = {
+      height: this.state.mobileNavopen ? this.refs.nav.offsetHeight : 0
+    }
 
     return (
       <header styleName={headerStyles}>
@@ -66,13 +69,15 @@ class Menu extends React.Component {
           <a data-scroll href="#">
             <h1 styleName='name'>Tim Mendoza</h1>
           </a>
-          <nav styleName='nav'>
-            <a styleName='link' data-scroll href="#about">About</a>
-            <a styleName='link' data-scroll href="#skills">Skills</a>
-            <a styleName='link' data-scroll href="#projects">Projects</a>
-
-            <div style={{left: this.state.linkHighlightPosition + '%'}}styleName='underline'></div>
-          </nav>
+          <button className='show-md' styleName='hamburger' onClick={this.hamburgerClick}></button>
+          <div styleName='navTray' style={trayStyles} ref='navTray'>
+            <nav styleName='nav' ref='nav'>
+              <a styleName='link' data-scroll href="#about">About</a>
+              <a styleName='link' data-scroll href="#skills">Skills</a>
+              <a styleName='link' data-scroll href="#projects">Projects</a>
+              <div className='hide-md' style={{left: this.state.linkHighlightPosition + '%'}}styleName='underline'></div>
+            </nav>
+          </div>
 
         </Grid>
 

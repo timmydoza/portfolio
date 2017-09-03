@@ -4,6 +4,10 @@ section {
   padding-top: 30px;
 }
 
+div {
+  box-sizing: border-box;
+}
+
 h1 {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
@@ -23,12 +27,13 @@ h2 {
   margin: 0 auto;
   width: 1200px;
   overflow: hidden;
+  position: relative;
 
-  @include break-max($grid-width-max) {
-    width: $grid-width-tablet;
+  @include break-max($grid-width-lg) {
+    width: $grid-width-md;
   }
 
-  @include break-max($grid-width-tablet) {
+  @include break-max($grid-width-md) {
     width: 100%;
     padding: 0 30px;
   }
@@ -36,7 +41,6 @@ h2 {
 
 .col {
   position: relative;
-  box-sizing: border-box;
   float: left;
   overflow: hidden;
   min-height: 1px;
@@ -49,4 +53,26 @@ h2 {
 
 a {
   box-sizing: border-box;
+}
+
+.hide-md {
+  @include break-max($grid-width-md) {
+    display: none !important;
+  }
+}
+
+.show-md {
+  display: none !important;
+  @include break-max($grid-width-md) {
+    display: initial !important;
+  }
+}
+
+button {
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }

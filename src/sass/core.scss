@@ -1,5 +1,5 @@
-$grid-width-max: 1200px;
-$grid-width-tablet: 700px;
+$grid-width-lg: 1200px;
+$grid-width-md: 700px;
 
 // Define a Responsive Breakpoint
 @mixin break($min:0px, $max:9999px) {
