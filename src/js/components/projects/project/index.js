@@ -18,7 +18,7 @@ class Project extends React.Component {
   componentDidMount() {
     var projectEl = this.refs.projectEl;
 
-    var threshold = (projectEl.getBoundingClientRect().top + window.scrollY) - (window.innerHeight * 0.8);
+    var threshold = (projectEl.getBoundingClientRect().top + window.scrollY) - (window.innerHeight * 0.7);
 
     var scrollHandler = throttle( () => {
 
@@ -40,22 +40,28 @@ class Project extends React.Component {
 
 
   render() {
-    var colStyles = cx(
-      'col',
+    var projectStyles = cx(
+      'project',
       {
         'active': this.state.active
       }
     );
 
     return (
-      <div styleName='project' ref='projectEl'>
+      <div styleName={projectStyles} ref='projectEl'>
 
         <a href={this.props.project.href} target="_blank"></a>
 
         <img src={this.props.project.img} />
 
         <div styleName='content'>
-          <Column styleName={colStyles}>
+          <div styleName='buttonContainer'>
+            <div styleName='buttonGroup'>
+            <a>Github</a>
+            <a>Demo</a>
+            </div>
+          </div>
+          <Column styleName='textContainer'>
             <h2>{this.props.project.name}</h2>
             <p>{this.props.project.description}</p>
           </Column>

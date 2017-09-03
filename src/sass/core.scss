@@ -1,0 +1,23 @@
+$grid-width-max: 1200px;
+$grid-width-tablet: 700px;
+
+// Define a Responsive Breakpoint
+@mixin break($min:0px, $max:9999px) {
+	@media (min-width: #{$min}) and (max-width: #{$max}) {
+		@content;
+	}
+}
+
+// Define a Responsive Breakpoint from $min up
+@mixin break-min($min) {
+	@include break($min) {
+		@content;
+	}
+}
+
+// Define a Responsive Breakpoint from 0 to $max
+@mixin break-max($max) {
+	@include break(0px, $max) {
+		@content;
+	}
+}

@@ -27,15 +27,6 @@ $project-height: 200px;
     overflow: hidden;
     z-index: 1;
     background: grey;
-
-    .col {
-      transition: transform ease-in-out .5s;
-      transform: translateX(-100%);
-
-      &.active {
-        transform: translate(0);
-      }
-    }
   }
 
   p {
@@ -46,8 +37,7 @@ $project-height: 200px;
 
   .description {
     text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 100;
+
     position: relative;
     background-color: #ddd;
     top: -6px;
@@ -57,6 +47,51 @@ $project-height: 200px;
   }
 }
 
+.textContainer, .buttonContainer {
+  transition: transform cubic-bezier(0, 0.77, 0, 1.01) 0.6s;
+}
+
+.textContainer {
+  transform: translateX(-100%);
+}
+
+.buttonContainer {
+  width: 100%;
+  position: absolute;
+  padding: 30px;
+  transform: translateX(100%);
+}
+
+.buttonGroup {
+  position: absolute;
+  right: 100px;
+
+  a {
+    display: inline-block;
+    width: 90px;
+    background: red;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 8px;
+    padding: 9px;
+    border-radius: 4px;
+  }
+}
+
 .project:hover img {
   transform: scale(1.2);
+}
+
+.project.active {
+  .textContainer {
+    transform: translate(0);
+  }
+
+  .buttonContainer {
+    transform: translate(0);
+  }
 }

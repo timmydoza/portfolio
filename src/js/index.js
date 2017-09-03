@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './polyfills';
+import './core/polyfills';
+import './core/analytics';
+
 import smoothScroll from 'smooth-scroll';
 new smoothScroll('a[href*="#"]', {offset: 60, speed: 700});
 

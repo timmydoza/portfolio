@@ -34,7 +34,12 @@ module.exports = {
 
       {
         test: /\.scss$/,
-        loaders: ["style-loader?source-map", "css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]", { loader: "postcss-loader", options: {sourceMap: true}}, "sass-loader?sourceMap"]
+        loaders: [
+          "style-loader?source-map",
+          "css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]",
+          { loader: "postcss-loader", options: {sourceMap: true}},
+          { loader: "sass-loader?sourceMap", options: {includePaths: ['./src/sass']}}
+        ]
       },
 
       {

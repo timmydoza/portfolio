@@ -1,3 +1,5 @@
+@import 'core';
+
 section {
   padding-top: 30px;
 }
@@ -21,9 +23,14 @@ h2 {
   margin: 0 auto;
   width: 1200px;
   overflow: hidden;
+
+  @include break-max($grid-width-max) {
+    width: $grid-width-tablet;
+  }
 }
 
 .col {
+  position: relative;
   box-sizing: border-box;
   float: left;
   overflow: hidden;
@@ -33,4 +40,8 @@ h2 {
 
 .col-12 {
   width: 100%;
+}
+
+a {
+  box-sizing: border-box;
 }
