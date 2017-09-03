@@ -123,11 +123,11 @@ $project-height: 200px;
   }
 }
 
-.project:hover img {
-  transform: scale(1.2);
-}
-
 .project.active {
+  img {
+    transform: scale(1.1);
+  }
+
   .textContainer {
     transform: translate(0);
   }

@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './style.scss';
 import CSSModules from 'react-css-modules';
 import cx from 'classnames';
-import throttle from 'lodash.throttle';
 
 import { Grid, Row, Column } from '../../layout';
 
@@ -15,32 +14,19 @@ class Project extends React.Component {
     }
   }
 
-  componentDidMount() {
-    var projectEl = this.refs.projectEl;
-
-    var threshold = (projectEl.getBoundingClientRect().top + window.scrollY) - (window.innerHeight * 0.7);
-
-    var scrollHandler = throttle( () => {
-
-      if (window.scrollY > threshold) {
-
-        window.removeEventListener('scroll', scrollHandler);
-
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.active) {
+      setTimeout(function () {
         this.setState({
           active: true
         });
-
-      }
-
-    }, 50);
-
-    window.addEventListener('scroll', scrollHandler);
-
+      }.bind(this), nextProps.delay);
+    }
   }
 
-
   render() {
-    var projectStyles = cx(
+
+    var projectClasses = cx(
       'project',
       {
         'active': this.state.active
@@ -48,7 +34,7 @@ class Project extends React.Component {
     );
 
     return (
-      <div styleName={projectStyles} ref='projectEl'>
+      <div styleName={projectClasses} ref='projectEl'>
 
         <a href={this.props.project.href} target="_blank"></a>
 
