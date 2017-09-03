@@ -3,7 +3,7 @@ import Project from './project';
 import styles from './style.scss';
 import { Grid, Row, Column } from '../layout';
 
-var projects = require('./project-data.js');
+var projects = require('../../../data/project-data.js');
 
 export default class Projects extends React.Component {
   render() {

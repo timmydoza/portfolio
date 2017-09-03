@@ -3,7 +3,7 @@ import styles from './style.scss';
 import CSSModules from 'react-css-modules';
 
 import Skill from './skill';
-import skillData from './skill-data.js';
+import skillData from '../../../data/skill-data.js';
 
 import { Grid, Row, Column } from '../layout';
 
