@@ -27,6 +27,11 @@ h2 {
   @include break-max($grid-width-max) {
     width: $grid-width-tablet;
   }
+
+  @include break-max($grid-width-tablet) {
+    width: 100%;
+    padding: 0 30px;
+  }
 }
 
 .col {

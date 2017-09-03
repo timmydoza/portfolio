@@ -46,14 +46,16 @@ $link-width: 120px;
     position: relative;
 
     .underline {
+      $sizeOffset: 30px;
       transition: all 0.6s cubic-bezier(0, 0, 0.08, 1.02);
       opacity: 0;
       height: 2px;
-      width: $link-width;
+      width: #{$link-width - $sizeOffset};
       position: absolute;
       bottom: 10px;
       left: 0;
       background: white;
+      transform: translateX(#{$sizeOffset / 2});
     }
 
     .link {
