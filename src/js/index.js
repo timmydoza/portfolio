@@ -8,7 +8,7 @@ import smoothScroll from 'smooth-scroll';
 new smoothScroll('a[href*="#"]', {offset: 60, speed: 700});
 
 import Menu from './components/menu';
-import Background from './components/background';
+import Hero from './components/hero';
 import About from './components/about';
 import Projects from './components/projects';
 import Skills from './components/skills';
@@ -21,7 +21,7 @@ class App extends React.Component {
 
       <div>
         <Menu />
-        <Background />
+        <Hero />
         <About />
         <Skills />
         <Projects />

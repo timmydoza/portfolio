@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './style.scss';
 
-module.exports = React.createClass({
-  render: function() {
+export default class Hero extends React.Component {
+  render() {
     return (
       <div className={styles.background}>
         <img src="img/background.jpg" className={styles.image}/>
@@ -14,4 +14,4 @@ module.exports = React.createClass({
       </div>
     );
   }
-});
+}
