@@ -31,7 +31,6 @@ class Menu extends React.Component {
         if (y < 100 && this.state.minimize) {
           this.setState({minimize: false});
         }
-
         this.pageSections.forEach((section, i) => {
           var rect = section.getBoundingClientRect();
           if (rect.top < 70 && rect.bottom > 70) {
@@ -45,11 +44,12 @@ class Menu extends React.Component {
 
   componentDidMount() {
 
+    this.pageSections = document.querySelectorAll('.pageSection');
+
     window.addEventListener('scroll', throttle(this.handleScroll, 100));
     window.addEventListener('resize', debounce(this.handleScroll, 25));
     this.handleScroll();
 
-    this.pageSections = document.querySelectorAll('.pageSection');
 
     this.toggleMobileNav = () => {
       this.setState({

@@ -1,6 +1,5 @@
 import React from 'react';
 import Project from './project';
-import styles from './style.scss';
 import { Grid, Row, Column } from '../layout';
 import throttle from 'lodash.throttle';
 
@@ -46,7 +45,7 @@ export default class Projects extends React.Component {
     return (
       <section id="projects" className="pageSection" ref='projects'>
         <Grid>
-          <h1 className={styles.heading}>Projects</h1>
+          <h1>Projects</h1>
 
           {projects.map(function(project, index) {
             return <Project project={project} active={active} delay={index * delay}/>

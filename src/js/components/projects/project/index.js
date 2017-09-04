@@ -43,8 +43,8 @@ class Project extends React.Component {
         <div styleName='content'>
           <div styleName='buttonContainer'>
             <div styleName='buttonGroup'>
-            <a styleName='github'>Github</a>
-            <a styleName='demo'>Demo</a>
+              <a styleName='github'>Github</a>
+              <a styleName='demo'>Demo</a>
             </div>
           </div>
           <Column styleName='textContainer'>
