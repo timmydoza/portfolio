@@ -4,18 +4,24 @@ import CSSModules from 'react-css-modules';
 
 import { Grid, Row, Column } from '../layout';
 import throttle from 'lodash.throttle';
+import debounce from 'lodash.debounce';
 
 class Menu extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      minimize: false,
+      minimize: window.innerWidth < 700,
       linkHighlightPosition: 0,
       movileNavOpen: false
     }
 
     this.handleScroll = () => {
+
+      if (window.innerWidth < 700) {
+        this.setState({minimize: true});
+      } else {
+
         var y = window.scrollY;
 
         if (y > 100 && !this.state.minimize) {
@@ -32,19 +38,31 @@ class Menu extends React.Component {
             this.setState({linkHighlightPosition: i / this.pageSections.length * 100});
           }
         });
+      }
 
       }
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', throttle(this.handleScroll, 50));
-    this.pageSections = document.querySelectorAll('.pageSection');
+
+    window.addEventListener('scroll', throttle(this.handleScroll, 100));
+    window.addEventListener('resize', debounce(this.handleScroll, 25));
     this.handleScroll();
-    this.hamburgerClick = () => {
+
+    this.pageSections = document.querySelectorAll('.pageSection');
+
+    this.toggleMobileNav = () => {
       this.setState({
         mobileNavopen: !this.state.mobileNavopen
       });
     }
+
+    this.closeMobileNav = () => {
+      this.setState({
+        mobileNavopen: false
+      });
+    }
+
   }
 
 
@@ -69,9 +87,9 @@ class Menu extends React.Component {
           <a data-scroll href="#">
             <h1 styleName='name'>Tim Mendoza</h1>
           </a>
-          <button className='show-md' styleName='hamburger' onClick={this.hamburgerClick}></button>
+          <button className='show-md' styleName='hamburger' onClick={this.toggleMobileNav}></button>
           <div styleName='navTray' style={trayStyles} ref='navTray'>
-            <nav styleName='nav' ref='nav'>
+            <nav styleName='nav' ref='nav' onClick={this.closeMobileNav}>
               <a styleName='link' data-scroll href="#about">About</a>
               <a styleName='link' data-scroll href="#skills">Skills</a>
               <a styleName='link' data-scroll href="#projects">Projects</a>

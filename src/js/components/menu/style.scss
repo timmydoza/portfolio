@@ -53,6 +53,7 @@ $link-width: 120px;
 
     @include break-max($grid-width-md) {
       width: 100%;
+      border-top: 1px solid #333;
     }
 
     .underline {
@@ -76,10 +77,21 @@ $link-width: 120px;
       width: $link-width;
 
       @include break-max($grid-width-md) {
+        position: relative;
         display: block;
         margin: 0 auto;
         font-size: 1em;
         text-align: center;
+      }
+
+      &+.link:before {
+        $width: 60px;
+        content: ' ';
+        position: absolute;
+        left: #{$width / 2};
+        height: 1px;
+        width: $width;
+        background: #333;
       }
     }
   }

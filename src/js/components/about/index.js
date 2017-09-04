@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from './style.scss';
+import CSSModules from 'react-css-modules';
 
 import { Grid, Row, Column } from '../layout';
 
 var email = "timmydoza";
 var domain = "gmail.com";
 
-var text = <p className={styles.text}>
+var text = <p styleName='text'>
   Hi. My name is Tim.  I'm a software developer, musician, and Colorado native.
   I recently moved to Boston after living in Seattle for over a year.  I love to use
   code to turn creative ideas into reality.  Programming has been a hobby
@@ -23,26 +24,26 @@ var text = <p className={styles.text}>
   at <a href={"mailto:" + email + "@" + domain}>{email + "@" + domain}</a>.</p>
 
 
-export default class About extends React.Component {
+class About extends React.Component {
   render() {
     return (
       <section id="about" className="pageSection">
         <Grid>
-          <h1 className={styles.heading}>About</h1>
-          <img src="img/tim.jpg" className={styles.image}/>
+          <h1>About</h1>
+          <img src="img/tim.jpg" className='hide-md' styleName='image'/>
           {text}
-          <div className={styles.icons}>
+          <div styleName='icons'>
             <a href={"mailto:" + email + "@" + domain}>
-              <img src="img/gmail.png" className={styles.icon} />
+              <img src="img/gmail.png" styleName='icon' />
             </a>
             <a href="https://github.com/timmydoza" target="_blank">
-              <img src="img/github.png" className={styles.icon} />
+              <img src="img/github.png" styleName='icon' />
             </a>
             <a href="https://linkedin.com/in/timmydoza" target="_blank">
-              <img src="img/in.png" className={styles.icon} />
+              <img src="img/in.png" styleName='icon' />
             </a>
             <a href="https://npmjs.com/~timmydoza" target="_blank">
-              <img src="img/npm.png" className={styles.icon} />
+              <img src="img/npm.png" styleName='icon' />
             </a>
           </div>
         </Grid>
@@ -50,3 +51,5 @@ export default class About extends React.Component {
     )
   }
 }
+
+export default CSSModules(About, styles);

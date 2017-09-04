@@ -1,3 +1,5 @@
+@import 'core';
+
 .background {
   background: linear-gradient(#333, black);
   padding-bottom: 40px;
@@ -5,6 +7,10 @@
 
 .skills {
   margin: 0 10%;
+
+  @include break-max($grid-width-md) {
+    margin: 0;
+  }
 }
 
 .heading {
