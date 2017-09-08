@@ -11,7 +11,9 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: [
-          autoprefixer
+          autoprefixer({
+            browsers: ['last 3 versions', '> 1%', 'iOS 8']
+          })
         ],
         context: __dirname //https://github.com/webpack-contrib/css-loader/issues/413#issuecomment-283944881
       }

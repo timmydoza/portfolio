@@ -14,10 +14,13 @@ $transform: perspective(100px) translate3d(-30px, 20px, 25px) rotate(0.01deg);
   position: absolute;
   text-align: center;
   width: 100%;
-  top: 150px;
+  top: 250px;
+  opacity: 0;
+  $transition: 1.5s cubic-bezier(0, 0, 0.18, 1.02);
+  transition: top $transition, opacity $transition;
 
   @include break-max($grid-width-md) {
-    top: 110px;
+    top: 190px;
   }
 
   h1 {
@@ -25,6 +28,15 @@ $transform: perspective(100px) translate3d(-30px, 20px, 25px) rotate(0.01deg);
   font-weight: 100;
   margin: 0;
   font-size: 3.5em;
+  }
+
+  &.active {
+    top: 150px;
+    opacity: 1;
+
+    @include break-max($grid-width-md) {
+      top: 110px;
+    }
   }
 }
 

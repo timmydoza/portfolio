@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './style.scss';
 import CSSModules from 'react-css-modules';
 import cx from 'classnames';
+import throttle from 'lodash.throttle';
+import GithubSVG from './github.svg';
 
 import { Grid, Row, Column } from '../../layout';
 
@@ -14,14 +16,27 @@ class Project extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.active) {
-      setTimeout(function () {
+
+  componentDidMount() {
+    var projectEl = this.refs.projectEl;
+    var threshold = (projectEl.getBoundingClientRect().top + window.scrollY) - (window.innerHeight * 0.6);
+
+    var scrollHandler = throttle( () => {
+
+      if (window.scrollY > threshold) {
+
+        window.removeEventListener('scroll', scrollHandler);
+
         this.setState({
           active: true
         });
-      }.bind(this), nextProps.delay);
-    }
+
+      }
+
+    }, 50);
+
+    window.addEventListener('scroll', scrollHandler);
+    scrollHandler();
   }
 
   render() {
@@ -43,7 +58,7 @@ class Project extends React.Component {
         <div styleName='content'>
           <div styleName='buttonContainer'>
             <div styleName='buttonGroup'>
-              <a styleName='github'>Github</a>
+              <a styleName='github'><GithubSVG />Github</a>
               <a styleName='demo'>Demo</a>
             </div>
           </div>

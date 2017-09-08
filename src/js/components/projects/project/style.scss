@@ -1,6 +1,7 @@
 @import 'core';
 
 $project-height: 200px;
+$project-height-lg: 175px; //tablet
 
 .project {
   width: 100%;
@@ -9,6 +10,10 @@ $project-height: 200px;
   overflow: hidden;
   margin: 2em 0;
   position: relative;
+
+  @include break-max($grid-width-lg) {
+    height: $project-height-lg;
+  }
 
   @include break-max($grid-width-md) {
     height: initial;
@@ -26,6 +31,10 @@ $project-height: 200px;
     transition: transform $transition, opacity $transition;
     float: left;
 
+    @include break-max($grid-width-lg) {
+      width: $project-height-lg;
+    }
+
     @include break-max($grid-width-md) {
       width: 100%;
     }
@@ -37,8 +46,14 @@ $project-height: 200px;
     float: left;
     position: relative;
     overflow: hidden;
+    color: white;
     z-index: 1;
-    background: grey;
+    background: #222;
+
+    @include break-max($grid-width-lg) {
+      height: $project-height-lg;
+      width: calc(100% - #{$project-height-lg});
+    }
 
     @include break-max($grid-width-md) {
       position: absolute;
@@ -49,21 +64,29 @@ $project-height: 200px;
     }
   }
 
+  h2 {
+    @include break-max($grid-width-lg) {
+      font-size: 2em;
+    }
+  }
+
   p {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     line-height: 25px;
 
+    @include break-max($grid-width-lg) {
+      margin: 0.5em 0;
+    }
+
     @include break-max($grid-width-md) {
       line-height: 8vw;
       font-size: 4.7vw;
-      margin: 0.5em 0;
     }
   }
 
   .description {
     text-align: center;
-
     position: relative;
     background-color: #ddd;
     top: -6px;
@@ -80,6 +103,10 @@ $project-height: 200px;
 .textContainer {
   transform: translateX(-100%);
 
+  @include break-max($grid-width-lg) {
+    padding: 15px;
+  }
+
   @include break-max($grid-width-md) {
     padding: 10px;
     color: white;
@@ -93,26 +120,31 @@ $project-height: 200px;
   transform: translateX(100%);
   z-index: 1;
 
+  @include break-max($grid-width-lg) {
+    bottom: 0;
+    padding: 15px;
+  }
+
   @include break-max($grid-width-md) {
     bottom: 16px;
+    padding: 0;
   }
 }
 
 .buttonGroup {
-  position: absolute;
-  right: 100px;
+  float: right;
 
   @include break-max($grid-width-md) {
-    right: 0;
-    left: 0;
+    float: none;
     text-align: center;
   }
 
   a {
     display: inline-block;
     position: relative;
-    width: 90px;
-    background: red;
+    width: 110px;
+    background: transparent;
+    border: 1px solid white;
     text-align: center;
     color: white;
     font-family: 'Roboto', sans-serif;
@@ -120,17 +152,23 @@ $project-height: 200px;
     font-weight: bold;
     text-transform: uppercase;
     margin: 0 8px;
-    padding: 9px;
-    border-radius: 4px;
+    padding: 9px 0 8px 19px;
+    border-radius: 5px;
     transition: background 0.2s cubic-bezier(0, 0, 0, 1.03);
 
     &:hover {
-      background: #ff5555;
+      background: #fff;
+      color: black;
     }
 
   }
 
   .demo {
+    padding-left: 13px;
+    &:hover:before {
+      border-left-color: black;
+    }
+
     &:before {
       $size: 7px;
       content: ' ';
@@ -140,25 +178,26 @@ $project-height: 200px;
       border-left: $size solid white;
       border-top: $size solid transparent;
       border-bottom: $size solid transparent;
-      top: 50%;
-      left: 13px;
+      top: calc(50% - 1px);
+      left: 20px;
       transform: translateY(-50%);
     }
   }
 
   .github {
-    padding-left: 20px;
+    &:hover svg {
+      fill: black;
+    }
 
-    &:before {
-      $size: 14px;
-      content: ' ';
+    svg {
+      $size: 18px;
       height: $size;
       width: $size;
-      color: white;
-      background-image: url("data:image/svg+xml,%3Csvg aria-labelledby='title' role='img' fill='#ffffff' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linejoin='round' stroke-miterlimit='1.414'%3E%3Ctitle%3EGitHub icon%3C/title%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
+      fill: white;
+      background-image: url("data:image/svg+xml,%3Csvg aria-labelledby='title' role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linejoin='round' stroke-miterlimit='1.414'%3E%3Ctitle%3EGitHub icon%3C/title%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
       position: absolute;
-      top: 50%;
-      left: 10px;
+      top: calc(50% - 1px);
+      left: 13px;
       transform: translateY(-50%);
     }
   }

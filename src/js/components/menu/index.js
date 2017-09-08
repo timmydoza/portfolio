@@ -31,10 +31,12 @@ class Menu extends React.Component {
         if (y < 100 && this.state.minimize) {
           this.setState({minimize: false});
         }
+
         this.pageSections.forEach((section, i) => {
           var rect = section.getBoundingClientRect();
-          if (rect.top < 70 && rect.bottom > 70) {
-            this.setState({linkHighlightPosition: i / this.pageSections.length * 100});
+          var position = i / this.pageSections.length * 100;
+          if (rect.top < 70 && rect.bottom > 70 && this.state.linkHighlightPosition !== position) {
+            this.setState({linkHighlightPosition: position});
           }
         });
       }
@@ -43,7 +45,6 @@ class Menu extends React.Component {
   }
 
   componentDidMount() {
-
     this.pageSections = document.querySelectorAll('.pageSection');
 
     window.addEventListener('scroll', throttle(this.handleScroll, 100));
