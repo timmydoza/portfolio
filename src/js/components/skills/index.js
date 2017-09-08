@@ -21,7 +21,7 @@ class Skills extends React.Component {
 
   componentDidMount() {
     var skills = this.refs.skills;
-    var threshold = (skills.getBoundingClientRect().top + window.scrollY) - (window.innerHeight * 0.6);
+    var threshold = (skills.getBoundingClientRect().top + window.scrollY) - (window.innerHeight * 0.7);
 
     var scrollHandler = throttle( () => {
 

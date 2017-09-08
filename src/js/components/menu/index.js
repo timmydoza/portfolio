@@ -63,7 +63,6 @@ class Menu extends React.Component {
         mobileNavopen: false
       });
     }
-
   }
 
 

@@ -54,6 +54,7 @@ $link-width: 120px;
     @include break-max($grid-width-md) {
       width: 100%;
       border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
     }
 
     .underline {
@@ -75,6 +76,8 @@ $link-width: 120px;
       font-size: 1.2em;
       line-height: $menu-height;
       width: $link-width;
+      user-select: none;
+      cursor: pointer;
 
       @include break-max($grid-width-md) {
         position: relative;
@@ -142,7 +145,7 @@ $link-width: 120px;
     right: 0;
     background: black;
     overflow: hidden;
-    transition: height 0.4s cubic-bezier(0, 0, 0.1, 0.97);
+    transition: height 0.3s cubic-bezier(0, 0, 0.1, 0.97);
   }
 }
 
@@ -152,6 +155,7 @@ $link-width: 120px;
   top: 15px;
   height: 30px;
   width: 30px;
+  outline: none;
   background-position: center;
   background-size: 80%;
   background-repeat: no-repeat;

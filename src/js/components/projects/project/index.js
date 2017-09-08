@@ -7,6 +7,7 @@ import GithubSVG from './github.svg';
 
 import { Grid, Row, Column } from '../../layout';
 
+
 class Project extends React.Component {
 
   constructor() {
@@ -19,9 +20,9 @@ class Project extends React.Component {
 
   componentDidMount() {
     var projectEl = this.refs.projectEl;
-    var threshold = (projectEl.getBoundingClientRect().top + window.scrollY) - (window.innerHeight * 0.6);
 
     var scrollHandler = throttle( () => {
+      var threshold = (projectEl.getBoundingClientRect().top + window.scrollY) - (window.innerHeight * 0.6);
 
       if (window.scrollY > threshold) {
 
@@ -58,8 +59,8 @@ class Project extends React.Component {
         <div styleName='content'>
           <div styleName='buttonContainer'>
             <div styleName='buttonGroup'>
-              <a styleName='github'><GithubSVG />Github</a>
-              <a styleName='demo'>Demo</a>
+              <a className={!this.props.project.githubUrl && styles.disabled} styleName='github' href={this.props.project.githubUrl} target="_blank"><GithubSVG />Github</a>
+              <a className={!this.props.project.demoUrl && styles.disabled} styleName='demo' href={this.props.project.demoUrl} target="_blank">Demo</a>
             </div>
           </div>
           <Column styleName='textContainer'>

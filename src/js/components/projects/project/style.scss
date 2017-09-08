@@ -155,10 +155,31 @@ $project-height-lg: 175px; //tablet
     padding: 9px 0 8px 19px;
     border-radius: 5px;
     transition: background 0.2s cubic-bezier(0, 0, 0, 1.03);
+    user-select: none;
+    cursor: pointer;
+
+    &:visited {
+      color: white;
+    }
 
     &:hover {
       background: #fff;
       color: black;
+    }
+
+    &.disabled {
+      cursor: default;
+      color: #666;
+      border: 1px solid #666;
+      pointer-events: none;
+
+      &:before {
+        border-left-color: #666;
+      }
+
+      svg {
+        fill: #666;
+      }
     }
 
   }
