@@ -12,7 +12,7 @@ var text = (
       <p styleName='text'>
 
       Hi. My name is Tim.  I'm a software developer, musician, and Colorado native.  I currently work
-      as a Frontend Developer for <a href="https://www.beamland.com/" target="_blank" rel="noopener">BEAM</a> in downtown Boston, where I spend most of time developing <a href="http://www.miniusa.com">miniusa.com</a>, and
+      as a Frontend Developer for <a href="https://www.beamland.com/" target="_blank" rel="noopener">BEAM</a> in downtown Boston, where I spend most of time developing <a href="http://www.miniusa.com" target="_blank" rel="noopener">miniusa.com</a>, and
       the recently launched sites <a href="https://www.amg.com" target="_blank" rel="noopener">amg.com</a> and <a href="https://www.amgfunds.com" target="_blank" rel="noopener">amgfunds.com</a>.
 
       <br /><br />
