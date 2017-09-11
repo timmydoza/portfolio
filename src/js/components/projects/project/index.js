@@ -54,15 +54,15 @@ class Project extends React.Component {
     return (
       <div styleName={projectClasses} ref='projectEl'>
 
-        <a href={this.props.project.href} target="_blank"></a>
+        <a href={this.props.project.href} target="_blank" rel="noopener"></a>
 
         <img src={this.props.project.img} />
 
         <div styleName='content'>
           <div styleName='buttonContainer'>
             <div styleName='buttonGroup'>
-              <a className={!this.props.project.githubUrl && styles.disabled} styleName='github' href={this.props.project.githubUrl} target="_blank"><GithubSVG />Github</a>
-              <a className={!this.props.project.demoUrl && styles.disabled} styleName='demo' href={this.props.project.demoUrl} target="_blank">Demo</a>
+              <a className={!this.props.project.githubUrl && styles.disabled} styleName='github' href={this.props.project.githubUrl} target="_blank" rel="noopener"><GithubSVG />Github</a>
+              <a className={!this.props.project.demoUrl && styles.disabled} styleName='demo' href={this.props.project.demoUrl} target="_blank" rel="noopener">Demo</a>
             </div>
           </div>
           <Column styleName='textContainer'>
