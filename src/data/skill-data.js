@@ -13,7 +13,7 @@ var skills = [
   },
 
   {
-    "name": "Node.JS",
+    "name": "Node.js",
     "width": "60%"
   },
 
@@ -34,12 +34,12 @@ var skills = [
 
   {
     "name": "Test-driven development",
-    "width": "60%"
+    "width": "55%"
   },
 
   {
     "name": "CSS / SCSS",
-    "width": "65%"
+    "width": "75%"
   },
 
   {
@@ -53,7 +53,7 @@ var skills = [
   },
 
   {
-    "name": "Machine Learning / AI",
+    "name": "Machine Learning",
     "width": "10%"
   }
 
