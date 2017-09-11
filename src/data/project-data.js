@@ -8,12 +8,12 @@ module.exports = [
   },
 
   {
-    name: 'Who Said It?',
-    img: 'img/who.jpg',
-    demoUrl: 'http://timmydoza.com/whosaidit',
-    description: 'A guessing game to test your knowledge of history and politics.  Try to guess if a given quote was said by a presidential candidate or evil dictator.'
+    name: 'RPi_7SegDisplay',
+    img: 'img/pi.jpg',
+    githubUrl: 'https://github.com/timmydoza/RPi_7SegDisplay',
+    description: 'A python library for displaying messages on an eight-digit seven-segment LED display driven by two 74HC595 shift registers connected to a Raspberry Pi.'
   },
-
+  
   {
     name: 'MEAN-Auth',
     img: 'img/meanauth.jpg',
@@ -29,11 +29,11 @@ module.exports = [
   },
 
   {
-    name: 'RPi_7SegDisplay',
-    img: 'img/pi.jpg',
-    githubUrl: 'https://github.com/timmydoza/RPi_7SegDisplay',
-    description: 'A python library for displaying messages on an eight-digit seven-segment LED display driven by two 74HC595 shift registers connected to a Raspberry Pi.'
-  }
+    name: 'Who Said It?',
+    img: 'img/who.jpg',
+    demoUrl: 'http://timmydoza.com/whosaidit',
+    description: 'A guessing game to test your knowledge of history and politics.  Try to guess if a given quote was said by a presidential candidate or evil dictator.'
+  },
 
   // {
   //   name: 'Nim',
