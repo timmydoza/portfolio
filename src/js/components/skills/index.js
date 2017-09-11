@@ -21,7 +21,7 @@ class Skills extends React.Component {
 
   componentDidMount() {
     var skills = this.refs.skills;
-    var threshold = (skills.getBoundingClientRect().top + window.scrollY) - (window.innerHeight * 0.7);
+    var threshold = (skills.getBoundingClientRect().top + window.scrollY) - (window.innerHeight * 0.6); //between 0 and 1.  0 is top of screen.
 
     var scrollHandler = throttle( () => {
 
@@ -29,9 +29,13 @@ class Skills extends React.Component {
 
         window.removeEventListener('scroll', scrollHandler);
 
-        this.setState({
-          active: true
-        });
+        setTimeout( () => {
+
+          this.setState({
+            active: true
+          });
+
+        }, 600);
 
       }
 

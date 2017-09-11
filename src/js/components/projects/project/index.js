@@ -22,15 +22,17 @@ class Project extends React.Component {
     var projectEl = this.refs.projectEl;
 
     var scrollHandler = throttle( () => {
-      var threshold = (projectEl.getBoundingClientRect().top + window.scrollY) - (window.innerHeight * 0.6);
+      var threshold = (projectEl.getBoundingClientRect().top + window.scrollY) - (window.innerHeight - 100); // - 100 pixels
 
       if (window.scrollY > threshold) {
 
         window.removeEventListener('scroll', scrollHandler);
 
-        this.setState({
-          active: true
-        });
+        setTimeout( () => {
+          this.setState({
+            active: true
+          });
+        }, 600);
 
       }
 
