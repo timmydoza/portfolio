@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './core/polyfills';
-import './core/analytics';
 
 import fastclick from 'fastclick';
 import smoothScroll from 'smooth-scroll';
