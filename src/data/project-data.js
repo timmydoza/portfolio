@@ -17,7 +17,7 @@ module.exports = [
   {
     name: 'MEAN-Auth',
     img: 'img/meanauth.jpg',
-    demoUrl: 'https://github.com/timmydoza/MEAN-Auth',
+    githubUrl: 'https://github.com/timmydoza/MEAN-Auth',
     description: 'A JavaScript library for adding token-based authentication and role-based authorization to MEAN stack applications.'
   },
 
