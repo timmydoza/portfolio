@@ -17,7 +17,7 @@ class Hero extends React.Component {
         <div styleName='text' ref='text'>
           <h1>Software Developer</h1>
           <div styleName='line'></div>
-          <h1>Boston, MA</h1>
+          <h1>Denver, CO</h1>
         </div>
       </div>
     );

@@ -54,7 +54,7 @@ var skills = [
 
   {
     "name": "Machine Learning",
-    "width": "10%"
+    "width": "5%"
   }
 
 ];
