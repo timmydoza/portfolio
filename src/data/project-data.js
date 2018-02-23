@@ -3,6 +3,7 @@ module.exports = [
   {
     name: 'Mozart Dice Game',
     img: 'img/mozart.jpg',
+    githubUrl: 'https://github.com/timmydoza/mozart_frontend',
     demoUrl: 'http://timmydoza.com/mozart',
     description: 'A musical dice game as composed by Wolfgang Amadeus Mozart.  Listen to randomly generated minuets with the push of a button.'
   },
